@@ -142,6 +142,45 @@ python -m irisen_model.train \
   --char-vocab korean
 ```
 
+응답이 `후속 질문`, `품질 기준`, `id=` 같은 메타 필드로 새면 기존 checkpoint에서는 생성 시 stop preset을 쓰세요.
+
+```bash
+python scripts/generate.py \
+  --checkpoint runs/irisen_char_labeled_10m.pt \
+  --prompt "<|example|>
+유형: instruction
+입력: 언어 모델을 시적인 비유로 설명해줘.
+응답:" \
+  --tokens 90 \
+  --completion-only \
+  --stop-preset answer \
+  --temperature 0.6 \
+  --top-k 28 \
+  --top-p 0.9 \
+  --repetition-penalty 1.12 \
+  --no-repeat-ngram-size 4 \
+  --num-samples 5
+```
+
+근본적으로는 `응답` 뒤에 메타데이터를 붙이지 않는 response-only 데이터로 새로 학습하는 편이 낫습니다.
+
+```bash
+python scripts/build_labeled_corpus.py \
+  --out-dir data/labeled_response_10m \
+  --target-tokens 12000000 \
+  --validation-fraction 0.08 \
+  --seed 20260603 \
+  --format response
+
+python -m irisen_model.train \
+  --config configs/irisen-char-labeled-10m.json \
+  --data data/labeled_response_10m/labeled_train.txt \
+  --val-data data/labeled_response_10m/labeled_val.txt \
+  --out runs/irisen_char_response_10m.pt \
+  --tokenizer char \
+  --char-vocab korean
+```
+
 생성할 때는 답변만 출력하고 다음 예제로 넘어가지 않게 자르는 편이 좋습니다.
 
 ```bash

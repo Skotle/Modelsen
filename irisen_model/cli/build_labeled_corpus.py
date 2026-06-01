@@ -13,6 +13,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--target-tokens", type=int, default=1_200_000)
     parser.add_argument("--validation-fraction", type=float, default=0.08)
     parser.add_argument("--seed", type=int, default=20260601)
+    parser.add_argument("--format", choices=["full", "response"], default="full")
     return parser.parse_args()
 
 
@@ -24,6 +25,7 @@ def main() -> None:
             target_tokens=args.target_tokens,
             validation_fraction=args.validation_fraction,
             seed=args.seed,
+            format=args.format,
         )
     )
     print(json.dumps({"totals": manifest["totals"], "artifacts": manifest["artifacts"]}, ensure_ascii=False, indent=2))
@@ -31,4 +33,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

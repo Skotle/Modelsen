@@ -14,6 +14,7 @@ class LabeledCorpusBuildConfig:
     target_tokens: int = 1_200_000
     validation_fraction: float = 0.08
     seed: int = 20260601
+    format: str = "full"
 
 
 DOMAINS = [
@@ -102,6 +103,17 @@ def _to_training_text(record: dict[str, Any]) -> str:
         f"응답: {record['response']}\n"
         f"검증키워드: {expected_terms}\n"
         f"라벨근거: {record['rationale']}\n"
+    )
+
+
+def _to_response_training_text(record: dict[str, Any]) -> str:
+    return (
+        "<|instruction|>\n"
+        f"유형: {record['task']}\n"
+        f"입력: {record['instruction']}\n"
+        "<|response|>\n"
+        f"{record['response']}\n"
+        "<|end|>\n"
     )
 
 
@@ -308,16 +320,19 @@ def _build_records(config: LabeledCorpusBuildConfig) -> list[dict[str, Any]]:
         raise ValueError("target_tokens must be positive")
     if not 0.0 < config.validation_fraction < 0.5:
         raise ValueError("validation_fraction must be greater than 0 and less than 0.5")
+    if config.format not in {"full", "response"}:
+        raise ValueError("format must be 'full' or 'response'")
 
     rng = random.Random(config.seed)
     records: list[dict[str, Any]] = []
     token_count = 0
     idx = 0
+    formatter = _to_response_training_text if config.format == "response" else _to_training_text
     while token_count < config.target_tokens:
         generator = GENERATORS[idx % len(GENERATORS)]
         record = generator(rng, idx)
         records.append(record)
-        token_count += _count_char_tokens(_to_training_text(record))
+        token_count += _count_char_tokens(formatter(record))
         idx += 1
     rng.shuffle(records)
     return records
@@ -327,8 +342,9 @@ def _write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
     _write_text(path, "".join(json.dumps(record, ensure_ascii=False) + "\n" for record in records))
 
 
-def _write_training_text(path: Path, records: list[dict[str, Any]]) -> str:
-    text = "\n".join(_to_training_text(record) for record in records) + "\n"
+def _write_training_text(path: Path, records: list[dict[str, Any]], output_format: str) -> str:
+    formatter = _to_response_training_text if output_format == "response" else _to_training_text
+    text = "\n".join(formatter(record) for record in records) + "\n"
     _write_text(path, text)
     return text
 
@@ -345,8 +361,8 @@ def build_labeled_corpus(config: LabeledCorpusBuildConfig) -> dict[str, Any]:
     val_jsonl_path = config.output_dir / "labeled_val.jsonl"
     manifest_path = config.output_dir / "manifest.json"
 
-    train_text = _write_training_text(train_txt_path, train_records)
-    val_text = _write_training_text(val_txt_path, val_records)
+    train_text = _write_training_text(train_txt_path, train_records, config.format)
+    val_text = _write_training_text(val_txt_path, val_records, config.format)
     _write_jsonl(train_jsonl_path, train_records)
     _write_jsonl(val_jsonl_path, val_records)
 
@@ -357,6 +373,7 @@ def build_labeled_corpus(config: LabeledCorpusBuildConfig) -> dict[str, Any]:
             "target_tokens": config.target_tokens,
             "validation_fraction": config.validation_fraction,
             "seed": config.seed,
+            "format": config.format,
         },
         "totals": {
             "examples": len(records),
@@ -394,4 +411,3 @@ def build_labeled_corpus(config: LabeledCorpusBuildConfig) -> dict[str, Any]:
     }
     _write_text(manifest_path, json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
     return manifest
-

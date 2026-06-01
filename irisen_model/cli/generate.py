@@ -7,6 +7,22 @@ from collections.abc import Sequence
 from irisen_model.generation import GENERATION_PRESETS
 from irisen_model.serving import TextGenerationEngine
 
+STOP_PRESETS = {
+    "answer": [
+        "\n후속 질문:",
+        "\n검토:",
+        "\n품질 기준:",
+        "\n규칙:",
+        "\n검증키워드:",
+        "\n라벨근거:",
+        "\nid=",
+        "\n<|example|>",
+        "<|example|>",
+        "<|end|>",
+    ],
+    "example": ["\n<|example|>", "<|example|>", "<|end|>"],
+}
+
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate text from an Irisen checkpoint.")
@@ -19,6 +35,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--top-p", type=float)
     parser.add_argument("--repetition-penalty", type=float)
     parser.add_argument("--no-repeat-ngram-size", type=int)
+    parser.add_argument("--stop-preset", choices=sorted(STOP_PRESETS), help="Use a built-in stop list.")
     parser.add_argument("--stop", action="append", help="Stop printing at this text. Can be passed multiple times.")
     parser.add_argument("--completion-only", action="store_true", help="Print only newly generated text.")
     parser.add_argument("--num-samples", type=int, default=1, help="Number of different samples to generate.")
@@ -44,6 +61,12 @@ def main() -> None:
     if args.num_samples < 1:
         raise ValueError("--num-samples must be at least 1")
 
+    stops: list[str] = []
+    if args.stop_preset is not None:
+        stops.extend(STOP_PRESETS[args.stop_preset])
+    if args.stop is not None:
+        stops.extend(args.stop)
+
     engine = TextGenerationEngine(args.checkpoint, device=args.device, seed=args.seed)
     for sample_idx in range(args.num_samples):
         text = engine.generate(
@@ -54,7 +77,7 @@ def main() -> None:
             top_p=generation_args["top_p"],
             repetition_penalty=generation_args["repetition_penalty"],
             no_repeat_ngram_size=args.no_repeat_ngram_size,
-            stop=args.stop,
+            stop=stops,
             return_full_text=not args.completion_only,
         )
         if args.num_samples > 1:

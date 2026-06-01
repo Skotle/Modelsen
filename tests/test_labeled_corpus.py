@@ -25,7 +25,23 @@ class LabeledCorpusTest(unittest.TestCase):
                 self.assertGreater(path.stat().st_size, 0)
                 self.assertEqual(len(item["sha256"]), 64)
 
+    def test_response_format_ends_answers_before_metadata(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            manifest = build_labeled_corpus(
+                LabeledCorpusBuildConfig(
+                    output_dir=Path(tmp),
+                    target_tokens=5_000,
+                    validation_fraction=0.2,
+                    seed=778,
+                    format="response",
+                )
+            )
+            self.assertGreaterEqual(manifest["totals"]["char_tokens"], 5_000)
+            train_text = Path(manifest["artifacts"]["train_text"]["path"]).read_text(encoding="utf-8")
+            self.assertIn("<|response|>", train_text)
+            self.assertIn("<|end|>", train_text)
+            self.assertNotIn("검증키워드:", train_text)
+
 
 if __name__ == "__main__":
     unittest.main()
-
