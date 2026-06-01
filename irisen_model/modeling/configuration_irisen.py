@@ -26,8 +26,8 @@ class IrisenConfig:
             raise ValueError("d_model must be divisible by n_heads")
         if self.context_size < 2:
             raise ValueError("context_size must be at least 2")
-        if self.vocab_size != 256:
-            raise ValueError("ByteTokenizer requires vocab_size=256")
+        if self.vocab_size < 2:
+            raise ValueError("vocab_size must be at least 2")
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -38,4 +38,3 @@ class IrisenConfig:
 
 
 ModelConfig = IrisenConfig
-

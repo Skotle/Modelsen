@@ -6,7 +6,7 @@ from typing import Any
 import torch
 
 from irisen_model.modeling import IrisenConfig, IrisenForCausalLM
-from irisen_model.tokenization import ByteTokenizer
+from irisen_model.tokenization import Tokenizer, tokenizer_from_dict
 from irisen_model.training.config import TrainConfig
 
 
@@ -16,7 +16,7 @@ CHECKPOINT_SCHEMA_VERSION = 1
 def save_checkpoint(
     path: Path,
     model: IrisenForCausalLM,
-    tokenizer: ByteTokenizer,
+    tokenizer: Tokenizer,
     train_config: TrainConfig,
     step: int,
     loss: float | None,
@@ -44,13 +44,12 @@ def load_checkpoint(path: Path, device: torch.device | str) -> dict[str, Any]:
 def load_model_from_checkpoint(
     path: Path,
     device: torch.device | str,
-) -> tuple[IrisenForCausalLM, ByteTokenizer, dict[str, Any]]:
+) -> tuple[IrisenForCausalLM, Tokenizer, dict[str, Any]]:
     checkpoint = load_checkpoint(path, device)
     config = IrisenConfig.from_dict(checkpoint["model_config"])
     model = IrisenForCausalLM(config)
     model.load_state_dict(checkpoint["model_state"])
     model.to(device)
     model.eval()
-    tokenizer = ByteTokenizer.from_dict(checkpoint.get("tokenizer"))
+    tokenizer = tokenizer_from_dict(checkpoint.get("tokenizer"))
     return model, tokenizer, checkpoint
-

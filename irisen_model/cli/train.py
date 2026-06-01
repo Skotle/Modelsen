@@ -6,7 +6,7 @@ from pathlib import Path
 from irisen_model.configs import load_experiment_config
 from irisen_model.data import load_text_dataset, load_text_dataset_pair
 from irisen_model.modeling import IrisenConfig, IrisenForCausalLM
-from irisen_model.tokenization import ByteTokenizer
+from irisen_model.tokenization import ByteTokenizer, CharTokenizer
 from irisen_model.training import TrainConfig, Trainer
 from irisen_model.utils import pick_device, set_seed
 
@@ -16,6 +16,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", type=Path, default=Path("configs/irisen-tiny.json"))
     parser.add_argument("--data", type=Path, default=Path("data/tiny_korean.txt"))
     parser.add_argument("--val-data", type=Path)
+    parser.add_argument("--tokenizer", choices=["byte", "char"], default="byte")
     parser.add_argument("--out", type=Path, default=Path("runs/irisen_tiny.pt"))
 
     parser.add_argument("--context-size", type=int)
@@ -80,7 +81,18 @@ def main() -> None:
 
     set_seed(train_config.seed)
     device = pick_device(train_config.device)
-    tokenizer = ByteTokenizer()
+    if args.tokenizer == "byte":
+        tokenizer = ByteTokenizer()
+    else:
+        tokenizer_paths = [args.data]
+        if args.val_data is not None:
+            tokenizer_paths.append(args.val_data)
+        tokenizer = CharTokenizer.from_files(tokenizer_paths)
+
+    model_config_values = model_config.to_dict()
+    model_config_values["vocab_size"] = tokenizer.vocab_size
+    model_config = IrisenConfig.from_dict(model_config_values)
+
     if args.val_data is None:
         dataset = load_text_dataset(args.data, tokenizer, train_config.train_fraction)
     else:

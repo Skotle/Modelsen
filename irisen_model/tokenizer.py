@@ -1,3 +1,3 @@
-from .tokenization import ByteTokenizer
+from .tokenization import ByteTokenizer, CharTokenizer
 
-__all__ = ["ByteTokenizer"]
+__all__ = ["ByteTokenizer", "CharTokenizer"]

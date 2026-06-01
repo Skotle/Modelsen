@@ -12,6 +12,28 @@ python scripts/evaluate.py --checkpoint runs/irisen_tiny.pt --data data/build/ir
 python -m irisen_model.generate --checkpoint runs/irisen_tiny.pt --prompt "언어 모델은" --tokens 120
 ```
 
+한글 생성이 `�` 문자로 깨지면 byte tokenizer 대신 char tokenizer로 새로 학습하세요.
+
+```bash
+python -m irisen_model.train \
+  --config configs/irisen-local-build.json \
+  --data data/build/irisen_train.txt \
+  --val-data data/build/irisen_val.txt \
+  --out runs/irisen_char.pt \
+  --tokenizer char \
+  --steps 1000 \
+  --eval-interval 100
+
+python scripts/generate.py \
+  --checkpoint runs/irisen_char.pt \
+  --prompt "유형: instruction
+입력: 언어 모델을 간결하게 설명해줘.
+응답:" \
+  --tokens 160 \
+  --temperature 0.45 \
+  --top-k 12
+```
+
 ## 클라우드 빌드
 
 클라우드 runner용 설정을 포함합니다.

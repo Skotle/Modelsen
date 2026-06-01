@@ -2,10 +2,11 @@
 
 from .config import IrisenConfig, ModelConfig, TrainConfig
 from .modeling import IrisenForCausalLM, LanguageModel
-from .tokenization import ByteTokenizer
+from .tokenization import ByteTokenizer, CharTokenizer
 
 __all__ = [
     "ByteTokenizer",
+    "CharTokenizer",
     "IrisenConfig",
     "IrisenForCausalLM",
     "LanguageModel",
