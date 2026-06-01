@@ -14,7 +14,11 @@ class CharTokenizerTest(unittest.TestCase):
         restored = tokenizer_from_dict(tokenizer.to_dict())
         self.assertEqual(restored.decode(restored.encode("가나다")), "가나다")
 
+    def test_korean_alphabet_preserves_unseen_hangul_prompt_chars(self) -> None:
+        tokenizer = CharTokenizer.from_text("언어 모델", alphabet="korean")
+        text = "비유를 섞어 창의적으로"
+        self.assertEqual(tokenizer.decode(tokenizer.encode(text)), text)
+
 
 if __name__ == "__main__":
     unittest.main()
-

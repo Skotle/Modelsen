@@ -17,6 +17,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--data", type=Path, default=Path("data/tiny_korean.txt"))
     parser.add_argument("--val-data", type=Path)
     parser.add_argument("--tokenizer", choices=["byte", "char"], default="byte")
+    parser.add_argument("--char-vocab", choices=["data", "korean"], default="data")
     parser.add_argument("--out", type=Path, default=Path("runs/irisen_tiny.pt"))
 
     parser.add_argument("--context-size", type=int)
@@ -87,7 +88,7 @@ def main() -> None:
         tokenizer_paths = [args.data]
         if args.val_data is not None:
             tokenizer_paths.append(args.val_data)
-        tokenizer = CharTokenizer.from_files(tokenizer_paths)
+        tokenizer = CharTokenizer.from_files(tokenizer_paths, alphabet=args.char_vocab)
 
     model_config_values = model_config.to_dict()
     model_config_values["vocab_size"] = tokenizer.vocab_size

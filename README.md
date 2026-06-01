@@ -21,6 +21,7 @@ python -m irisen_model.train \
   --val-data data/build/irisen_val.txt \
   --out runs/irisen_char.pt \
   --tokenizer char \
+  --char-vocab korean \
   --steps 1000 \
   --eval-interval 100
 
@@ -45,6 +46,8 @@ python scripts/generate.py \
 입력: 언어 모델을 비유를 섞어 새롭게 설명해줘.
 응답:" \
   --tokens 140 \
+  --completion-only \
+  --stop "<|example|>" \
   --no-repeat-ngram-size 4
 ```
 
@@ -117,7 +120,28 @@ python -m irisen_model.train \
   --data data/labeled/labeled_train.txt \
   --val-data data/labeled/labeled_val.txt \
   --out runs/irisen_char_labeled.pt \
-  --tokenizer char
+  --tokenizer char \
+  --char-vocab korean
+```
+
+생성할 때는 답변만 출력하고 다음 예제로 넘어가지 않게 자르는 편이 좋습니다.
+
+```bash
+python scripts/generate.py \
+  --checkpoint runs/irisen_char_labeled.pt \
+  --preset creative \
+  --prompt "<|example|>
+유형: instruction
+입력: 언어 모델을 시적인 비유로 설명해줘.
+응답:" \
+  --tokens 120 \
+  --completion-only \
+  --stop "<|example|>" \
+  --temperature 0.75 \
+  --top-k 40 \
+  --top-p 0.95 \
+  --repetition-penalty 1.08 \
+  --no-repeat-ngram-size 4
 ```
 
 ## 소스 구조

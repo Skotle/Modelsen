@@ -18,6 +18,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--top-p", type=float)
     parser.add_argument("--repetition-penalty", type=float)
     parser.add_argument("--no-repeat-ngram-size", type=int)
+    parser.add_argument("--stop", action="append", help="Stop printing at this text. Can be passed multiple times.")
+    parser.add_argument("--completion-only", action="store_true", help="Print only newly generated text.")
     parser.add_argument("--seed", type=int, default=1337)
     parser.add_argument("--device", default="auto")
     return parser.parse_args()
@@ -46,6 +48,8 @@ def main() -> None:
         top_p=generation_args["top_p"],
         repetition_penalty=generation_args["repetition_penalty"],
         no_repeat_ngram_size=args.no_repeat_ngram_size,
+        stop=args.stop,
+        return_full_text=not args.completion_only,
     )
     print(text)
     print(f"\n[checkpoint step={engine.metadata.get('step')} loss={engine.metadata.get('loss')}]")

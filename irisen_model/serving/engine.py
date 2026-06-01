@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from pathlib import Path
 
 import torch
@@ -27,6 +28,8 @@ class TextGenerationEngine:
         top_p: float | None = None,
         repetition_penalty: float = 1.0,
         no_repeat_ngram_size: int | None = None,
+        stop: Iterable[str] | None = None,
+        return_full_text: bool = True,
     ) -> str:
         prompt_ids = self.tokenizer.encode(prompt) or [10]
         idx = torch.tensor([prompt_ids], dtype=torch.long, device=self.device)
@@ -40,4 +43,13 @@ class TextGenerationEngine:
             repetition_penalty=repetition_penalty,
             no_repeat_ngram_size=no_repeat_ngram_size,
         )
-        return self.tokenizer.decode(out[0].tolist())
+        text = self.tokenizer.decode(out[0].tolist())
+        if not return_full_text:
+            decoded_prompt = self.tokenizer.decode(prompt_ids)
+            if text.startswith(decoded_prompt):
+                text = text[len(decoded_prompt) :]
+        for stop_text in stop or []:
+            stop_at = text.find(stop_text)
+            if stop_at >= 0:
+                text = text[:stop_at]
+        return text
