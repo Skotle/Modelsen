@@ -1,0 +1,41 @@
+{
+  "config": {
+    "output_dir": "data\\labeled_10m",
+    "target_tokens": 12000000,
+    "validation_fraction": 0.08,
+    "seed": 20260602
+  },
+  "totals": {
+    "examples": 24792,
+    "train_examples": 22808,
+    "validation_examples": 1984,
+    "char_tokens": 12024989,
+    "byte_tokens": 19624131
+  },
+  "artifacts": {
+    "train_text": {
+      "path": "data\\labeled_10m\\labeled_train.txt",
+      "char_tokens": 11060778,
+      "byte_tokens": 18055828,
+      "bytes": 18281043,
+      "sha256": "a13c66470f8a651de29d91e70886302d8dcd656997f7fbc04c901edcd838d415"
+    },
+    "validation_text": {
+      "path": "data\\labeled_10m\\labeled_val.txt",
+      "char_tokens": 964211,
+      "byte_tokens": 1568303,
+      "bytes": 1587909,
+      "sha256": "b50fd52c3e19be08603b00af913e7ad90062c9958ce00f1811c53f3431204d54"
+    },
+    "train_jsonl": {
+      "path": "data\\labeled_10m\\labeled_train.jsonl",
+      "bytes": 18759503,
+      "sha256": "8ac3db571af3ff1fb89f7f0d361acc082f1b7859d784c6eca796e31a18428c4f"
+    },
+    "validation_jsonl": {
+      "path": "data\\labeled_10m\\labeled_val.jsonl",
+      "bytes": 1630081,
+      "sha256": "e358f1f6d4cae7a9ed0456db10b5efcfed5b58878fae79471e8da069339d3769"
+    }
+  }
+}

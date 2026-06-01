@@ -124,6 +124,24 @@ python -m irisen_model.train \
   --char-vocab korean
 ```
 
+1,000만 토큰 이상 추가 라벨링 데이터는 별도 폴더에 만들 수 있습니다.
+
+```bash
+python scripts/build_labeled_corpus.py \
+  --out-dir data/labeled_10m \
+  --target-tokens 12000000 \
+  --validation-fraction 0.08 \
+  --seed 20260602
+
+python -m irisen_model.train \
+  --config configs/irisen-char-labeled-10m.json \
+  --data data/labeled_10m/labeled_train.txt \
+  --val-data data/labeled_10m/labeled_val.txt \
+  --out runs/irisen_char_labeled_10m.pt \
+  --tokenizer char \
+  --char-vocab korean
+```
+
 생성할 때는 답변만 출력하고 다음 예제로 넘어가지 않게 자르는 편이 좋습니다.
 
 ```bash
@@ -141,8 +159,11 @@ python scripts/generate.py \
   --top-k 40 \
   --top-p 0.95 \
   --repetition-penalty 1.08 \
-  --no-repeat-ngram-size 4
+  --no-repeat-ngram-size 4 \
+  --num-samples 3
 ```
+
+같은 프롬프트에서 매번 같은 답이 필요할 때만 `--seed 77`처럼 seed를 지정하세요. seed를 생략하면 매 실행마다 샘플링이 달라집니다.
 
 ## 소스 구조
 

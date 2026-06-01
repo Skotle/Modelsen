@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+from collections.abc import Sequence
 
 from irisen_model.generation import GENERATION_PRESETS
 from irisen_model.serving import TextGenerationEngine
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate text from an Irisen checkpoint.")
     parser.add_argument("--checkpoint", type=Path, default=Path("runs/irisen_tiny.pt"))
     parser.add_argument("--prompt", default="언어 모델은")
@@ -20,9 +21,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--no-repeat-ngram-size", type=int)
     parser.add_argument("--stop", action="append", help="Stop printing at this text. Can be passed multiple times.")
     parser.add_argument("--completion-only", action="store_true", help="Print only newly generated text.")
-    parser.add_argument("--seed", type=int, default=1337)
+    parser.add_argument("--num-samples", type=int, default=1, help="Number of different samples to generate.")
+    parser.add_argument("--seed", type=int, help="Set for reproducible output. Omit for varied output.")
     parser.add_argument("--device", default="auto")
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def main() -> None:
@@ -39,19 +41,27 @@ def main() -> None:
     if args.repetition_penalty is not None:
         generation_args["repetition_penalty"] = args.repetition_penalty
 
+    if args.num_samples < 1:
+        raise ValueError("--num-samples must be at least 1")
+
     engine = TextGenerationEngine(args.checkpoint, device=args.device, seed=args.seed)
-    text = engine.generate(
-        args.prompt,
-        max_new_tokens=args.tokens,
-        temperature=generation_args["temperature"],
-        top_k=generation_args["top_k"],
-        top_p=generation_args["top_p"],
-        repetition_penalty=generation_args["repetition_penalty"],
-        no_repeat_ngram_size=args.no_repeat_ngram_size,
-        stop=args.stop,
-        return_full_text=not args.completion_only,
-    )
-    print(text)
+    for sample_idx in range(args.num_samples):
+        text = engine.generate(
+            args.prompt,
+            max_new_tokens=args.tokens,
+            temperature=generation_args["temperature"],
+            top_k=generation_args["top_k"],
+            top_p=generation_args["top_p"],
+            repetition_penalty=generation_args["repetition_penalty"],
+            no_repeat_ngram_size=args.no_repeat_ngram_size,
+            stop=args.stop,
+            return_full_text=not args.completion_only,
+        )
+        if args.num_samples > 1:
+            print(f"[sample {sample_idx + 1}/{args.num_samples}]")
+        print(text)
+        if args.num_samples > 1 and sample_idx != args.num_samples - 1:
+            print()
     print(f"\n[checkpoint step={engine.metadata.get('step')} loss={engine.metadata.get('loss')}]")
 
 
