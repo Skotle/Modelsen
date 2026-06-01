@@ -24,6 +24,9 @@ class TextGenerationEngine:
         max_new_tokens: int = 200,
         temperature: float = 0.8,
         top_k: int | None = 40,
+        top_p: float | None = None,
+        repetition_penalty: float = 1.0,
+        no_repeat_ngram_size: int | None = None,
     ) -> str:
         prompt_ids = self.tokenizer.encode(prompt) or [10]
         idx = torch.tensor([prompt_ids], dtype=torch.long, device=self.device)
@@ -33,6 +36,8 @@ class TextGenerationEngine:
             max_new_tokens=max_new_tokens,
             temperature=temperature,
             top_k=top_k,
+            top_p=top_p,
+            repetition_penalty=repetition_penalty,
+            no_repeat_ngram_size=no_repeat_ngram_size,
         )
         return self.tokenizer.decode(out[0].tolist())
-

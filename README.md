@@ -34,6 +34,37 @@ python scripts/generate.py \
   --top-k 12
 ```
 
+창의적인 답변은 후보 폭을 더 넓히고 반복 억제를 약하게 걸어 생성합니다.
+
+```bash
+python scripts/generate.py \
+  --checkpoint runs/irisen_char.pt \
+  --preset creative \
+  --prompt "<|example|>
+유형: instruction
+입력: 언어 모델을 비유를 섞어 새롭게 설명해줘.
+응답:" \
+  --tokens 140 \
+  --no-repeat-ngram-size 4
+```
+
+직접 조절할 수도 있습니다.
+
+```bash
+python scripts/generate.py \
+  --checkpoint runs/irisen_char.pt \
+  --prompt "<|example|>
+유형: instruction
+입력: 언어 모델을 창의적으로 설명해줘.
+응답:" \
+  --tokens 140 \
+  --temperature 0.85 \
+  --top-k 48 \
+  --top-p 0.97 \
+  --repetition-penalty 1.03 \
+  --no-repeat-ngram-size 4
+```
+
 ## 클라우드 빌드
 
 클라우드 runner용 설정을 포함합니다.

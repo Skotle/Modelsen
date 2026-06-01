@@ -61,10 +61,22 @@ class IrisenForCausalLM(nn.Module):
         max_new_tokens: int,
         temperature: float = 1.0,
         top_k: int | None = None,
+        top_p: float | None = None,
+        repetition_penalty: float = 1.0,
+        no_repeat_ngram_size: int | None = None,
     ) -> torch.Tensor:
         from irisen_model.generation import generate_tokens
 
-        return generate_tokens(self, idx, max_new_tokens, temperature, top_k)
+        return generate_tokens(
+            self,
+            idx,
+            max_new_tokens,
+            temperature,
+            top_k,
+            top_p,
+            repetition_penalty,
+            no_repeat_ngram_size,
+        )
 
 
 LanguageModel = IrisenForCausalLM
