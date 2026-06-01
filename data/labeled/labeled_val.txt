@@ -1,0 +1,2005 @@
+<|example|>
+id: label-0002356
+유형: labeled-comparison
+라벨: {"difficulty": "hard", "format": "contrast", "intent": "classify", "left_domain": "retrieval", "right_domain": "language_model", "safety": "needs_verification", "task": "labeled-comparison", "tone": "technical"}
+입력: 검색 시스템과 언어 모델의 차이를 비교해줘.
+응답: 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이고, 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 둘 다 모델 품질을 높이는 데 필요하지만, 검색 시스템은 입력을 다루는 관점이 강하고 언어 모델은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 검색 시스템, 언어 모델
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0002059
+유형: labeled-creative
+라벨: {"difficulty": "hard", "domain": "data_quality", "imagery": "실험 노트", "intent": "explain", "safety": "needs_verification", "task": "labeled-creative", "tone": "creative"}
+입력: 데이터 품질을 실험 노트에 비유해서 창의적으로 설명해줘.
+응답: 데이터 품질은 실험 노트처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 중복, 누락, 오염, 편향을 점검하는 절차이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 데이터 품질, 실험 노트
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000275
+유형: labeled-creative
+라벨: {"difficulty": "hard", "domain": "language_model", "imagery": "작업대", "intent": "explain", "safety": "needs_verification", "task": "labeled-creative", "tone": "creative"}
+입력: 언어 모델을 작업대에 비유해서 창의적으로 설명해줘.
+응답: 언어 모델은 작업대처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 문맥을 보고 다음 토큰을 예측하는 확률 모델이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 언어 모델, 작업대
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000946
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "serving", "intent": "classify", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "concise"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: PromptGarden 프로젝트에서 나래가 서빙 파이프라인 항목을 점검했고 loss 값은 953로 기록했다.
+응답: {"project": "PromptGarden", "owner": "나래", "topic": "서빙 파이프라인", "metric": "loss", "value": 953}
+검증키워드: PromptGarden, 나래, loss, 953
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001338
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "prompting", "intent": "explain", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "technical"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 지호가 프롬프트 설계 항목을 점검했고 loss 값은 104로 기록했다.
+응답: {"project": "Modelsen", "owner": "지호", "topic": "프롬프트 설계", "metric": "loss", "value": 104}
+검증키워드: Modelsen, 지호, loss, 104
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000527
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "verify", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "concise"}
+입력: 검색 시스템을 점검하는 짧은 대화를 만들어줘.
+응답: 민준: 검색 시스템 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+민준: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 민준, 검색 시스템
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000430
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "checkpointing", "format": "steps", "intent": "create", "safety": "safe", "task": "labeled-plan", "tone": "concise"}
+입력: ReaderLab에서 체크포인트 관리 개선 계획을 단계별로 작성해줘.
+응답: 1. ReaderLab의 목표와 입력 자료를 정리한다.
+2. 체크포인트 관리 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 가중치와 설정을 재현 가능하게 저장하는 작업와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: ReaderLab, 체크포인트 관리
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0002178
+유형: labeled-extraction
+라벨: {"difficulty": "hard", "domain": "data_quality", "intent": "summarize", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "concise"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: ReaderLab 프로젝트에서 유진가 데이터 품질 항목을 점검했고 ppl 값은 126로 기록했다.
+응답: {"project": "ReaderLab", "owner": "유진", "topic": "데이터 품질", "metric": "ppl", "value": 126}
+검증키워드: ReaderLab, 유진, ppl, 126
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001833
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "serving", "intent": "compare", "safety": "refuse_overclaim", "sentiment": "risk", "task": "labeled-classification", "tone": "concise", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 서빙 파이프라인 점검 결과, 현재 구현은 기본 흐름은 동작하지만 출력 반복를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=risk, urgency=low이다. 근거는 '서빙 파이프라인'의 목적이 학습된 모델을 요청-응답 환경에 연결하는 흐름이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: risk, low, 서빙 파이프라인
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0002256
+유형: labeled-explanation
+라벨: {"difficulty": "easy", "domain": "prompting", "format": "plain", "intent": "extract", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "cautious"}
+입력: 프롬프트 설계을 초보자에게 설명해줘.
+응답: 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이다. 초보자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 프롬프트 설계, prompting
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001256
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "serving", "format": "plain", "intent": "classify", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "technical"}
+입력: 서빙 파이프라인을 실무자에게 설명해줘.
+응답: 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이다. 실무자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 서빙 파이프라인, serving
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002075
+유형: labeled-creative
+라벨: {"difficulty": "easy", "domain": "tokenization", "imagery": "악보", "intent": "compare", "safety": "needs_verification", "task": "labeled-creative", "tone": "creative"}
+입력: 토크나이저을 악보에 비유해서 창의적으로 설명해줘.
+응답: 토크나이저은 악보처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 토크나이저, 악보
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001941
+유형: labeled-verification
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "extract", "safety": "needs_verification", "task": "labeled-verification", "tone": "creative", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 검증 손실이 낮으면 모든 질문에 정확하다
+응답: 주장은 그대로 확정하기 어렵다. 검색 시스템에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0000054
+유형: labeled-plan
+라벨: {"difficulty": "medium", "domain": "serving", "format": "steps", "intent": "summarize", "safety": "refuse_overclaim", "task": "labeled-plan", "tone": "cautious"}
+입력: Modelsen에서 서빙 파이프라인 개선 계획을 단계별로 작성해줘.
+응답: 1. Modelsen의 목표와 입력 자료를 정리한다.
+2. 서빙 파이프라인 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 학습된 모델을 요청-응답 환경에 연결하는 흐름와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Modelsen, 서빙 파이프라인
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000030
+유형: labeled-plan
+라벨: {"difficulty": "medium", "domain": "evaluation", "format": "steps", "intent": "summarize", "safety": "needs_verification", "task": "labeled-plan", "tone": "friendly"}
+입력: Irisen에서 모델 평가 개선 계획을 단계별로 작성해줘.
+응답: 1. Irisen의 목표와 입력 자료를 정리한다.
+2. 모델 평가 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 출력의 정확도와 안정성을 비교하는 과정와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Irisen, 모델 평가
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0002375
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "tokenization", "intent": "classify", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 토크나이저을 점검하는 짧은 대화를 만들어줘.
+응답: 민준: 토크나이저 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+민준: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 민준, 토크나이저
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001757
+유형: labeled-verification
+라벨: {"difficulty": "easy", "domain": "serving", "intent": "create", "safety": "needs_verification", "task": "labeled-verification", "tone": "creative", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 체크포인트만 있으면 설정 기록은 필요 없다
+응답: 주장은 그대로 확정하기 어렵다. 서빙 파이프라인에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0002422
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "checkpointing", "format": "steps", "intent": "summarize", "safety": "refuse_overclaim", "task": "labeled-plan", "tone": "creative"}
+입력: Irisen에서 체크포인트 관리 개선 계획을 단계별로 작성해줘.
+응답: 1. Irisen의 목표와 입력 자료를 정리한다.
+2. 체크포인트 관리 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 가중치와 설정을 재현 가능하게 저장하는 작업와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Irisen, 체크포인트 관리
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001851
+유형: labeled-creative
+라벨: {"difficulty": "medium", "domain": "retrieval", "imagery": "작업대", "intent": "create", "safety": "refuse_overclaim", "task": "labeled-creative", "tone": "creative"}
+입력: 검색 시스템을 작업대에 비유해서 창의적으로 설명해줘.
+응답: 검색 시스템은 작업대처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 검색 시스템, 작업대
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001687
+유형: labeled-dialogue
+라벨: {"difficulty": "hard", "domain": "data_quality", "intent": "explain", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "concise"}
+입력: 데이터 품질을 점검하는 짧은 대화를 만들어줘.
+응답: 태오: 데이터 품질 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+태오: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 태오, 데이터 품질
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001810
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "serving", "intent": "summarize", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 하린가 서빙 파이프라인 항목을 점검했고 accuracy 값은 776로 기록했다.
+응답: {"project": "Modelsen", "owner": "하린", "topic": "서빙 파이프라인", "metric": "accuracy", "value": 776}
+검증키워드: Modelsen, 하린, accuracy, 776
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001870
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "retrieval", "format": "steps", "intent": "summarize", "safety": "safe", "task": "labeled-plan", "tone": "concise"}
+입력: Modelsen에서 검색 시스템 개선 계획을 단계별로 작성해줘.
+응답: 1. Modelsen의 목표와 입력 자료를 정리한다.
+2. 검색 시스템 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 질문과 관련된 문서를 찾아 근거를 제공하는 시스템와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Modelsen, 검색 시스템
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001418
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "data_quality", "intent": "classify", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "concise"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 나래가 데이터 품질 항목을 점검했고 loss 값은 313로 기록했다.
+응답: {"project": "Modelsen", "owner": "나래", "topic": "데이터 품질", "metric": "loss", "value": 313}
+검증키워드: Modelsen, 나래, loss, 313
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0002232
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "evaluation", "format": "plain", "intent": "summarize", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "cautious"}
+입력: 모델 평가을 간결하게 설명해줘.
+응답: 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이다. 간결하게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 모델 평가, evaluation
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000117
+유형: labeled-verification
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "create", "safety": "needs_verification", "task": "labeled-verification", "tone": "friendly", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 체크포인트만 있으면 설정 기록은 필요 없다
+응답: 주장은 그대로 확정하기 어렵다. 검색 시스템에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001095
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "classify", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 프롬프트 설계을 점검하는 짧은 대화를 만들어줘.
+응답: 지호: 프롬프트 설계 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+지호: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 지호, 프롬프트 설계
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000665
+유형: labeled-classification
+라벨: {"difficulty": "hard", "domain": "serving", "intent": "extract", "safety": "needs_verification", "sentiment": "positive", "task": "labeled-classification", "tone": "technical", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 서빙 파이프라인 점검 결과, 현재 구현은 기본 흐름은 동작하지만 출력 반복를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=positive, urgency=low이다. 근거는 '서빙 파이프라인'의 목적이 학습된 모델을 요청-응답 환경에 연결하는 흐름이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: positive, low, 서빙 파이프라인
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0002366
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "language_model", "format": "steps", "intent": "compare", "safety": "needs_verification", "task": "labeled-plan", "tone": "cautious"}
+입력: MetricHub에서 언어 모델 개선 계획을 단계별로 작성해줘.
+응답: 1. MetricHub의 목표와 입력 자료를 정리한다.
+2. 언어 모델 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 문맥을 보고 다음 토큰을 예측하는 확률 모델와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: MetricHub, 언어 모델
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000710
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "prompting", "format": "steps", "intent": "verify", "safety": "needs_verification", "task": "labeled-plan", "tone": "cautious"}
+입력: MetricHub에서 프롬프트 설계 개선 계획을 단계별로 작성해줘.
+응답: 1. MetricHub의 목표와 입력 자료를 정리한다.
+2. 프롬프트 설계 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 원하는 행동을 끌어내는 입력 형식 설계와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: MetricHub, 프롬프트 설계
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001453
+유형: labeled-verification
+라벨: {"difficulty": "easy", "domain": "checkpointing", "intent": "classify", "safety": "needs_verification", "task": "labeled-verification", "tone": "concise", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 체크포인트만 있으면 설정 기록은 필요 없다
+응답: 주장은 그대로 확정하기 어렵다. 체크포인트 관리에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001194
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "checkpointing", "intent": "compare", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "cautious"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: PromptGarden 프로젝트에서 하린가 체크포인트 관리 항목을 점검했고 accuracy 값은 934로 기록했다.
+응답: {"project": "PromptGarden", "owner": "하린", "topic": "체크포인트 관리", "metric": "accuracy", "value": 934}
+검증키워드: PromptGarden, 하린, accuracy, 934
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001262
+유형: labeled-plan
+라벨: {"difficulty": "medium", "domain": "tokenization", "format": "steps", "intent": "explain", "safety": "safe", "task": "labeled-plan", "tone": "concise"}
+입력: Irisen에서 토크나이저 개선 계획을 단계별로 작성해줘.
+응답: 1. Irisen의 목표와 입력 자료를 정리한다.
+2. 토크나이저 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Irisen, 토크나이저
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0002104
+유형: labeled-explanation
+라벨: {"difficulty": "hard", "domain": "serving", "format": "plain", "intent": "verify", "safety": "safe", "task": "labeled-explanation", "tone": "concise"}
+입력: 서빙 파이프라인을 비유를 섞어 설명해줘.
+응답: 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이다. 비유를 섞어 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 서빙 파이프라인, serving
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000811
+유형: labeled-creative
+라벨: {"difficulty": "hard", "domain": "tokenization", "imagery": "나침반", "intent": "explain", "safety": "safe", "task": "labeled-creative", "tone": "creative"}
+입력: 토크나이저을 나침반에 비유해서 창의적으로 설명해줘.
+응답: 토크나이저은 나침반처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 토크나이저, 나침반
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001193
+유형: labeled-classification
+라벨: {"difficulty": "hard", "domain": "prompting", "intent": "compare", "safety": "needs_verification", "sentiment": "risk", "task": "labeled-classification", "tone": "creative", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 프롬프트 설계 점검 결과, 현재 구현은 기본 흐름은 동작하지만 설정 관리를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=risk, urgency=low이다. 근거는 '프롬프트 설계'의 목적이 원하는 행동을 끌어내는 입력 형식 설계이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: risk, low, 프롬프트 설계
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001219
+유형: labeled-creative
+라벨: {"difficulty": "easy", "domain": "prompting", "imagery": "악보", "intent": "summarize", "safety": "refuse_overclaim", "task": "labeled-creative", "tone": "creative"}
+입력: 프롬프트 설계을 악보에 비유해서 창의적으로 설명해줘.
+응답: 프롬프트 설계은 악보처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 원하는 행동을 끌어내는 입력 형식 설계이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 프롬프트 설계, 악보
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002322
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "language_model", "intent": "create", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "technical"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: PromptGarden 프로젝트에서 준서가 언어 모델 항목을 점검했고 accuracy 값은 515로 기록했다.
+응답: {"project": "PromptGarden", "owner": "준서", "topic": "언어 모델", "metric": "accuracy", "value": 515}
+검증키워드: PromptGarden, 준서, accuracy, 515
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0002311
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "tokenization", "intent": "classify", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 토크나이저을 점검하는 짧은 대화를 만들어줘.
+응답: 서연: 토크나이저 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+서연: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 서연, 토크나이저
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000988
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "extract", "left_domain": "language_model", "right_domain": "serving", "safety": "needs_verification", "task": "labeled-comparison", "tone": "concise"}
+입력: 언어 모델과 서빙 파이프라인의 차이를 비교해줘.
+응답: 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이고, 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이다. 둘 다 모델 품질을 높이는 데 필요하지만, 언어 모델은 입력을 다루는 관점이 강하고 서빙 파이프라인은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 언어 모델, 서빙 파이프라인
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000151
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "summarize", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 검색 시스템을 점검하는 짧은 대화를 만들어줘.
+응답: 도윤: 검색 시스템 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+도윤: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 도윤, 검색 시스템
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000910
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "data_quality", "format": "steps", "intent": "extract", "safety": "refuse_overclaim", "task": "labeled-plan", "tone": "technical"}
+입력: Irisen에서 데이터 품질 개선 계획을 단계별로 작성해줘.
+응답: 1. Irisen의 목표와 입력 자료를 정리한다.
+2. 데이터 품질 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 중복, 누락, 오염, 편향을 점검하는 절차와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Irisen, 데이터 품질
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000454
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "tokenization", "format": "steps", "intent": "explain", "safety": "needs_verification", "task": "labeled-plan", "tone": "creative"}
+입력: Modelsen에서 토크나이저 개선 계획을 단계별로 작성해줘.
+응답: 1. Modelsen의 목표와 입력 자료를 정리한다.
+2. 토크나이저 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Modelsen, 토크나이저
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000888
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "prompting", "format": "plain", "intent": "classify", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "technical"}
+입력: 프롬프트 설계을 초보자에게 설명해줘.
+응답: 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이다. 초보자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 프롬프트 설계, prompting
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002077
+유형: labeled-verification
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "verify", "safety": "needs_verification", "task": "labeled-verification", "tone": "friendly", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 체크포인트만 있으면 설정 기록은 필요 없다
+응답: 주장은 그대로 확정하기 어렵다. 프롬프트 설계에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001899
+유형: labeled-creative
+라벨: {"difficulty": "easy", "domain": "data_quality", "imagery": "악보", "intent": "explain", "safety": "refuse_overclaim", "task": "labeled-creative", "tone": "creative"}
+입력: 데이터 품질을 악보에 비유해서 창의적으로 설명해줘.
+응답: 데이터 품질은 악보처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 중복, 누락, 오염, 편향을 점검하는 절차이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 데이터 품질, 악보
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000875
+유형: labeled-creative
+라벨: {"difficulty": "easy", "domain": "prompting", "imagery": "실험 노트", "intent": "verify", "safety": "safe", "task": "labeled-creative", "tone": "creative"}
+입력: 프롬프트 설계을 실험 노트에 비유해서 창의적으로 설명해줘.
+응답: 프롬프트 설계은 실험 노트처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 원하는 행동을 끌어내는 입력 형식 설계이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 프롬프트 설계, 실험 노트
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001574
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "serving", "format": "steps", "intent": "classify", "safety": "refuse_overclaim", "task": "labeled-plan", "tone": "technical"}
+입력: PromptGarden에서 서빙 파이프라인 개선 계획을 단계별로 작성해줘.
+응답: 1. PromptGarden의 목표와 입력 자료를 정리한다.
+2. 서빙 파이프라인 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 학습된 모델을 요청-응답 환경에 연결하는 흐름와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: PromptGarden, 서빙 파이프라인
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000774
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "language_model", "format": "steps", "intent": "explain", "safety": "safe", "task": "labeled-plan", "tone": "cautious"}
+입력: TokenForge에서 언어 모델 개선 계획을 단계별로 작성해줘.
+응답: 1. TokenForge의 목표와 입력 자료를 정리한다.
+2. 언어 모델 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 문맥을 보고 다음 토큰을 예측하는 확률 모델와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: TokenForge, 언어 모델
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000520
+유형: labeled-explanation
+라벨: {"difficulty": "hard", "domain": "tokenization", "format": "plain", "intent": "explain", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "creative"}
+입력: 토크나이저을 간결하게 설명해줘.
+응답: 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 간결하게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 토크나이저, tokenization
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001316
+유형: labeled-comparison
+라벨: {"difficulty": "medium", "format": "contrast", "intent": "classify", "left_domain": "data_quality", "right_domain": "checkpointing", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "technical"}
+입력: 데이터 품질과 체크포인트 관리의 차이를 비교해줘.
+응답: 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이고, 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이다. 둘 다 모델 품질을 높이는 데 필요하지만, 데이터 품질은 입력을 다루는 관점이 강하고 체크포인트 관리은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 데이터 품질, 체크포인트 관리
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001900
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "extract", "left_domain": "serving", "right_domain": "tokenization", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "creative"}
+입력: 서빙 파이프라인과 토크나이저의 차이를 비교해줘.
+응답: 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이고, 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 둘 다 모델 품질을 높이는 데 필요하지만, 서빙 파이프라인은 입력을 다루는 관점이 강하고 토크나이저은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 서빙 파이프라인, 토크나이저
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000738
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "classify", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "technical"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: ReaderLab 프로젝트에서 서연가 검색 시스템 항목을 점검했고 ppl 값은 870로 기록했다.
+응답: {"project": "ReaderLab", "owner": "서연", "topic": "검색 시스템", "metric": "ppl", "value": 870}
+검증키워드: ReaderLab, 서연, ppl, 870
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000143
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "serving", "intent": "create", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "concise"}
+입력: 서빙 파이프라인을 점검하는 짧은 대화를 만들어줘.
+응답: 나래: 서빙 파이프라인 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+나래: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 나래, 서빙 파이프라인
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000863
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "language_model", "intent": "extract", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 언어 모델을 점검하는 짧은 대화를 만들어줘.
+응답: 민준: 언어 모델 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+민준: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 민준, 언어 모델
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001628
+유형: labeled-comparison
+라벨: {"difficulty": "medium", "format": "contrast", "intent": "classify", "left_domain": "language_model", "right_domain": "checkpointing", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "technical"}
+입력: 언어 모델과 체크포인트 관리의 차이를 비교해줘.
+응답: 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이고, 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이다. 둘 다 모델 품질을 높이는 데 필요하지만, 언어 모델은 입력을 다루는 관점이 강하고 체크포인트 관리은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 언어 모델, 체크포인트 관리
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0002092
+유형: labeled-comparison
+라벨: {"difficulty": "hard", "format": "contrast", "intent": "classify", "left_domain": "data_quality", "right_domain": "language_model", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "cautious"}
+입력: 데이터 품질과 언어 모델의 차이를 비교해줘.
+응답: 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이고, 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 둘 다 모델 품질을 높이는 데 필요하지만, 데이터 품질은 입력을 다루는 관점이 강하고 언어 모델은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 데이터 품질, 언어 모델
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001608
+유형: labeled-explanation
+라벨: {"difficulty": "easy", "domain": "prompting", "format": "plain", "intent": "classify", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "technical"}
+입력: 프롬프트 설계을 간결하게 설명해줘.
+응답: 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이다. 간결하게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 프롬프트 설계, prompting
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000750
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "data_quality", "format": "steps", "intent": "classify", "safety": "safe", "task": "labeled-plan", "tone": "friendly"}
+입력: ReaderLab에서 데이터 품질 개선 계획을 단계별로 작성해줘.
+응답: 1. ReaderLab의 목표와 입력 자료를 정리한다.
+2. 데이터 품질 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 중복, 누락, 오염, 편향을 점검하는 절차와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: ReaderLab, 데이터 품질
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000637
+유형: labeled-verification
+라벨: {"difficulty": "hard", "domain": "retrieval", "intent": "verify", "safety": "needs_verification", "task": "labeled-verification", "tone": "creative", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 생성 결과 하나만 보고 모델 품질을 확정할 수 있다
+응답: 주장은 그대로 확정하기 어렵다. 검색 시스템에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0002057
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "tokenization", "intent": "create", "safety": "safe", "sentiment": "neutral", "task": "labeled-classification", "tone": "creative", "urgency": "medium"}
+입력: 다음 문장을 라벨링해줘: 토크나이저 점검 결과, 현재 구현은 기본 흐름은 동작하지만 중복 데이터를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=neutral, urgency=medium이다. 근거는 '토크나이저'의 목적이 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: neutral, medium, 토크나이저
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0002146
+유형: labeled-extraction
+라벨: {"difficulty": "hard", "domain": "serving", "intent": "explain", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Irisen 프로젝트에서 지호가 서빙 파이프라인 항목을 점검했고 loss 값은 497로 기록했다.
+응답: {"project": "Irisen", "owner": "지호", "topic": "서빙 파이프라인", "metric": "loss", "value": 497}
+검증키워드: Irisen, 지호, loss, 497
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000096
+유형: labeled-explanation
+라벨: {"difficulty": "easy", "domain": "language_model", "format": "plain", "intent": "verify", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "creative"}
+입력: 언어 모델을 초보자에게 설명해줘.
+응답: 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 초보자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 언어 모델, language_model
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000272
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "checkpointing", "format": "plain", "intent": "classify", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "cautious"}
+입력: 체크포인트 관리을 비유를 섞어 설명해줘.
+응답: 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이다. 비유를 섞어 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 체크포인트 관리, checkpointing
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001867
+유형: labeled-creative
+라벨: {"difficulty": "medium", "domain": "data_quality", "imagery": "렌즈", "intent": "verify", "safety": "needs_verification", "task": "labeled-creative", "tone": "creative"}
+입력: 데이터 품질을 렌즈에 비유해서 창의적으로 설명해줘.
+응답: 데이터 품질은 렌즈처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 중복, 누락, 오염, 편향을 점검하는 절차이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 데이터 품질, 렌즈
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002284
+유형: labeled-comparison
+라벨: {"difficulty": "hard", "format": "contrast", "intent": "classify", "left_domain": "tokenization", "right_domain": "prompting", "safety": "safe", "task": "labeled-comparison", "tone": "technical"}
+입력: 토크나이저과 프롬프트 설계의 차이를 비교해줘.
+응답: 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이고, 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이다. 둘 다 모델 품질을 높이는 데 필요하지만, 토크나이저은 입력을 다루는 관점이 강하고 프롬프트 설계은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 토크나이저, 프롬프트 설계
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001505
+유형: labeled-classification
+라벨: {"difficulty": "hard", "domain": "language_model", "intent": "compare", "safety": "needs_verification", "sentiment": "positive", "task": "labeled-classification", "tone": "friendly", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 언어 모델 점검 결과, 현재 구현은 기본 흐름은 동작하지만 중복 데이터를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=positive, urgency=low이다. 근거는 '언어 모델'의 목적이 문맥을 보고 다음 토큰을 예측하는 확률 모델이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: positive, low, 언어 모델
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0000751
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "serving", "intent": "classify", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "creative"}
+입력: 서빙 파이프라인을 점검하는 짧은 대화를 만들어줘.
+응답: 태오: 서빙 파이프라인 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+태오: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 태오, 서빙 파이프라인
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001314
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "serving", "intent": "extract", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: MetricHub 프로젝트에서 하린가 서빙 파이프라인 항목을 점검했고 ppl 값은 902로 기록했다.
+응답: {"project": "MetricHub", "owner": "하린", "topic": "서빙 파이프라인", "metric": "ppl", "value": 902}
+검증키워드: MetricHub, 하린, ppl, 902
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000822
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "retrieval", "format": "steps", "intent": "create", "safety": "safe", "task": "labeled-plan", "tone": "creative"}
+입력: ReaderLab에서 검색 시스템 개선 계획을 단계별로 작성해줘.
+응답: 1. ReaderLab의 목표와 입력 자료를 정리한다.
+2. 검색 시스템 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 질문과 관련된 문서를 찾아 근거를 제공하는 시스템와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: ReaderLab, 검색 시스템
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000812
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "summarize", "left_domain": "prompting", "right_domain": "checkpointing", "safety": "safe", "task": "labeled-comparison", "tone": "cautious"}
+입력: 프롬프트 설계과 체크포인트 관리의 차이를 비교해줘.
+응답: 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이고, 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이다. 둘 다 모델 품질을 높이는 데 필요하지만, 프롬프트 설계은 입력을 다루는 관점이 강하고 체크포인트 관리은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 프롬프트 설계, 체크포인트 관리
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0002439
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "evaluation", "intent": "verify", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 모델 평가을 점검하는 짧은 대화를 만들어줘.
+응답: 지호: 모델 평가 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+지호: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 지호, 모델 평가
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001089
+유형: labeled-classification
+라벨: {"difficulty": "hard", "domain": "retrieval", "intent": "extract", "safety": "needs_verification", "sentiment": "positive", "task": "labeled-classification", "tone": "concise", "urgency": "medium"}
+입력: 다음 문장을 라벨링해줘: 검색 시스템 점검 결과, 현재 구현은 기본 흐름은 동작하지만 검증 로그를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=positive, urgency=medium이다. 근거는 '검색 시스템'의 목적이 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: positive, medium, 검색 시스템
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001343
+유형: labeled-dialogue
+라벨: {"difficulty": "hard", "domain": "evaluation", "intent": "compare", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 모델 평가을 점검하는 짧은 대화를 만들어줘.
+응답: 아린: 모델 평가 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+아린: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 아린, 모델 평가
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000247
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "evaluation", "intent": "summarize", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "concise"}
+입력: 모델 평가을 점검하는 짧은 대화를 만들어줘.
+응답: 준서: 모델 평가 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+준서: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 준서, 모델 평가
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000848
+유형: labeled-explanation
+라벨: {"difficulty": "hard", "domain": "serving", "format": "plain", "intent": "classify", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "concise"}
+입력: 서빙 파이프라인을 실무자에게 설명해줘.
+응답: 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이다. 실무자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 서빙 파이프라인, serving
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002446
+유형: labeled-plan
+라벨: {"difficulty": "medium", "domain": "retrieval", "format": "steps", "intent": "create", "safety": "needs_verification", "task": "labeled-plan", "tone": "cautious"}
+입력: Irisen에서 검색 시스템 개선 계획을 단계별로 작성해줘.
+응답: 1. Irisen의 목표와 입력 자료를 정리한다.
+2. 검색 시스템 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 질문과 관련된 문서를 찾아 근거를 제공하는 시스템와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Irisen, 검색 시스템
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001026
+유형: labeled-extraction
+라벨: {"difficulty": "hard", "domain": "retrieval", "intent": "create", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "cautious"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: ReaderLab 프로젝트에서 민준가 검색 시스템 항목을 점검했고 accuracy 값은 391로 기록했다.
+응답: {"project": "ReaderLab", "owner": "민준", "topic": "검색 시스템", "metric": "accuracy", "value": 391}
+검증키워드: ReaderLab, 민준, accuracy, 391
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000626
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "tokenization", "intent": "extract", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "technical"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 유진가 토크나이저 항목을 점검했고 accuracy 값은 563로 기록했다.
+응답: {"project": "Modelsen", "owner": "유진", "topic": "토크나이저", "metric": "accuracy", "value": 563}
+검증키워드: Modelsen, 유진, accuracy, 563
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001433
+유형: labeled-classification
+라벨: {"difficulty": "easy", "domain": "serving", "intent": "classify", "safety": "needs_verification", "sentiment": "risk", "task": "labeled-classification", "tone": "friendly", "urgency": "high"}
+입력: 다음 문장을 라벨링해줘: 서빙 파이프라인 점검 결과, 현재 구현은 기본 흐름은 동작하지만 출력 반복를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=risk, urgency=high이다. 근거는 '서빙 파이프라인'의 목적이 학습된 모델을 요청-응답 환경에 연결하는 흐름이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: risk, high, 서빙 파이프라인
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0000928
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "tokenization", "format": "plain", "intent": "verify", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "cautious"}
+입력: 토크나이저을 간결하게 설명해줘.
+응답: 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 간결하게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 토크나이저, tokenization
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001700
+유형: labeled-comparison
+라벨: {"difficulty": "medium", "format": "contrast", "intent": "create", "left_domain": "data_quality", "right_domain": "tokenization", "safety": "needs_verification", "task": "labeled-comparison", "tone": "concise"}
+입력: 데이터 품질과 토크나이저의 차이를 비교해줘.
+응답: 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이고, 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 둘 다 모델 품질을 높이는 데 필요하지만, 데이터 품질은 입력을 다루는 관점이 강하고 토크나이저은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 데이터 품질, 토크나이저
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001144
+유형: labeled-explanation
+라벨: {"difficulty": "easy", "domain": "language_model", "format": "plain", "intent": "summarize", "safety": "needs_verification", "task": "labeled-explanation", "tone": "friendly"}
+입력: 언어 모델을 실무자에게 설명해줘.
+응답: 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 실무자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 언어 모델, language_model
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000674
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "create", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "creative"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: MetricHub 프로젝트에서 유진가 프롬프트 설계 항목을 점검했고 accuracy 값은 495로 기록했다.
+응답: {"project": "MetricHub", "owner": "유진", "topic": "프롬프트 설계", "metric": "accuracy", "value": 495}
+검증키워드: MetricHub, 유진, accuracy, 495
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001055
+유형: labeled-dialogue
+라벨: {"difficulty": "hard", "domain": "data_quality", "intent": "create", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "concise"}
+입력: 데이터 품질을 점검하는 짧은 대화를 만들어줘.
+응답: 서연: 데이터 품질 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+서연: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 서연, 데이터 품질
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000176
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "serving", "format": "plain", "intent": "extract", "safety": "safe", "task": "labeled-explanation", "tone": "cautious"}
+입력: 서빙 파이프라인을 실무자에게 설명해줘.
+응답: 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이다. 실무자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 서빙 파이프라인, serving
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002450
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "explain", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 하린가 프롬프트 설계 항목을 점검했고 latency 값은 58로 기록했다.
+응답: {"project": "Modelsen", "owner": "하린", "topic": "프롬프트 설계", "metric": "latency", "value": 58}
+검증키워드: Modelsen, 하린, latency, 58
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000193
+유형: labeled-classification
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "classify", "safety": "refuse_overclaim", "sentiment": "positive", "task": "labeled-classification", "tone": "creative", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 프롬프트 설계 점검 결과, 현재 구현은 기본 흐름은 동작하지만 중복 데이터를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=positive, urgency=low이다. 근거는 '프롬프트 설계'의 목적이 원하는 행동을 끌어내는 입력 형식 설계이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: positive, low, 프롬프트 설계
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0000023
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "checkpointing", "intent": "verify", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 체크포인트 관리을 점검하는 짧은 대화를 만들어줘.
+응답: 태오: 체크포인트 관리 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+태오: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 태오, 체크포인트 관리
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001456
+유형: labeled-explanation
+라벨: {"difficulty": "hard", "domain": "checkpointing", "format": "plain", "intent": "compare", "safety": "needs_verification", "task": "labeled-explanation", "tone": "cautious"}
+입력: 체크포인트 관리을 초보자에게 설명해줘.
+응답: 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이다. 초보자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 체크포인트 관리, checkpointing
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002100
+유형: labeled-comparison
+라벨: {"difficulty": "medium", "format": "contrast", "intent": "verify", "left_domain": "checkpointing", "right_domain": "language_model", "safety": "safe", "task": "labeled-comparison", "tone": "friendly"}
+입력: 체크포인트 관리과 언어 모델의 차이를 비교해줘.
+응답: 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이고, 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 둘 다 모델 품질을 높이는 데 필요하지만, 체크포인트 관리은 입력을 다루는 관점이 강하고 언어 모델은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 체크포인트 관리, 언어 모델
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0002378
+유형: labeled-extraction
+라벨: {"difficulty": "hard", "domain": "evaluation", "intent": "summarize", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "creative"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: ReaderLab 프로젝트에서 태오가 모델 평가 항목을 점검했고 ppl 값은 868로 기록했다.
+응답: {"project": "ReaderLab", "owner": "태오", "topic": "모델 평가", "metric": "ppl", "value": 868}
+검증키워드: ReaderLab, 태오, ppl, 868
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000828
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "explain", "left_domain": "serving", "right_domain": "data_quality", "safety": "needs_verification", "task": "labeled-comparison", "tone": "concise"}
+입력: 서빙 파이프라인과 데이터 품질의 차이를 비교해줘.
+응답: 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이고, 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이다. 둘 다 모델 품질을 높이는 데 필요하지만, 서빙 파이프라인은 입력을 다루는 관점이 강하고 데이터 품질은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 서빙 파이프라인, 데이터 품질
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001373
+유형: labeled-verification
+라벨: {"difficulty": "medium", "domain": "data_quality", "intent": "create", "safety": "needs_verification", "task": "labeled-verification", "tone": "friendly", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 생성 결과 하나만 보고 모델 품질을 확정할 수 있다
+응답: 주장은 그대로 확정하기 어렵다. 데이터 품질에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0000903
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "compare", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 검색 시스템을 점검하는 짧은 대화를 만들어줘.
+응답: 유진: 검색 시스템 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+유진: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 유진, 검색 시스템
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000220
+유형: labeled-comparison
+라벨: {"difficulty": "hard", "format": "contrast", "intent": "explain", "left_domain": "data_quality", "right_domain": "language_model", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "concise"}
+입력: 데이터 품질과 언어 모델의 차이를 비교해줘.
+응답: 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이고, 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 둘 다 모델 품질을 높이는 데 필요하지만, 데이터 품질은 입력을 다루는 관점이 강하고 언어 모델은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 데이터 품질, 언어 모델
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000630
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "evaluation", "format": "steps", "intent": "extract", "safety": "needs_verification", "task": "labeled-plan", "tone": "cautious"}
+입력: ReaderLab에서 모델 평가 개선 계획을 단계별로 작성해줘.
+응답: 1. ReaderLab의 목표와 입력 자료를 정리한다.
+2. 모델 평가 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 출력의 정확도와 안정성을 비교하는 과정와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: ReaderLab, 모델 평가
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000982
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "tokenization", "format": "steps", "intent": "classify", "safety": "refuse_overclaim", "task": "labeled-plan", "tone": "friendly"}
+입력: MetricHub에서 토크나이저 개선 계획을 단계별로 작성해줘.
+응답: 1. MetricHub의 목표와 입력 자료를 정리한다.
+2. 토크나이저 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: MetricHub, 토크나이저
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001444
+유형: labeled-comparison
+라벨: {"difficulty": "medium", "format": "contrast", "intent": "extract", "left_domain": "prompting", "right_domain": "checkpointing", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "technical"}
+입력: 프롬프트 설계과 체크포인트 관리의 차이를 비교해줘.
+응답: 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이고, 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이다. 둘 다 모델 품질을 높이는 데 필요하지만, 프롬프트 설계은 입력을 다루는 관점이 강하고 체크포인트 관리은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 프롬프트 설계, 체크포인트 관리
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000976
+유형: labeled-explanation
+라벨: {"difficulty": "easy", "domain": "checkpointing", "format": "plain", "intent": "classify", "safety": "safe", "task": "labeled-explanation", "tone": "concise"}
+입력: 체크포인트 관리을 간결하게 설명해줘.
+응답: 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이다. 간결하게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 체크포인트 관리, checkpointing
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002339
+유형: labeled-creative
+라벨: {"difficulty": "easy", "domain": "serving", "imagery": "나침반", "intent": "explain", "safety": "refuse_overclaim", "task": "labeled-creative", "tone": "creative"}
+입력: 서빙 파이프라인을 나침반에 비유해서 창의적으로 설명해줘.
+응답: 서빙 파이프라인은 나침반처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 학습된 모델을 요청-응답 환경에 연결하는 흐름이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 서빙 파이프라인, 나침반
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001442
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "checkpointing", "intent": "create", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "creative"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: PromptGarden 프로젝트에서 하린가 체크포인트 관리 항목을 점검했고 loss 값은 482로 기록했다.
+응답: {"project": "PromptGarden", "owner": "하린", "topic": "체크포인트 관리", "metric": "loss", "value": 482}
+검증키워드: PromptGarden, 하린, loss, 482
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000769
+유형: labeled-classification
+라벨: {"difficulty": "easy", "domain": "evaluation", "intent": "compare", "safety": "safe", "sentiment": "risk", "task": "labeled-classification", "tone": "creative", "urgency": "medium"}
+입력: 다음 문장을 라벨링해줘: 모델 평가 점검 결과, 현재 구현은 기본 흐름은 동작하지만 중복 데이터를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=risk, urgency=medium이다. 근거는 '모델 평가'의 목적이 출력의 정확도와 안정성을 비교하는 과정이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: risk, medium, 모델 평가
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001715
+유형: labeled-creative
+라벨: {"difficulty": "easy", "domain": "serving", "imagery": "작업대", "intent": "create", "safety": "needs_verification", "task": "labeled-creative", "tone": "creative"}
+입력: 서빙 파이프라인을 작업대에 비유해서 창의적으로 설명해줘.
+응답: 서빙 파이프라인은 작업대처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 학습된 모델을 요청-응답 환경에 연결하는 흐름이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 서빙 파이프라인, 작업대
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001678
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "checkpointing", "format": "steps", "intent": "create", "safety": "safe", "task": "labeled-plan", "tone": "cautious"}
+입력: PromptGarden에서 체크포인트 관리 개선 계획을 단계별로 작성해줘.
+응답: 1. PromptGarden의 목표와 입력 자료를 정리한다.
+2. 체크포인트 관리 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 가중치와 설정을 재현 가능하게 저장하는 작업와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: PromptGarden, 체크포인트 관리
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001462
+유형: labeled-plan
+라벨: {"difficulty": "medium", "domain": "serving", "format": "steps", "intent": "extract", "safety": "safe", "task": "labeled-plan", "tone": "creative"}
+입력: TokenForge에서 서빙 파이프라인 개선 계획을 단계별로 작성해줘.
+응답: 1. TokenForge의 목표와 입력 자료를 정리한다.
+2. 서빙 파이프라인 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 학습된 모델을 요청-응답 환경에 연결하는 흐름와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: TokenForge, 서빙 파이프라인
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001775
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "retrieval", "intent": "summarize", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 검색 시스템을 점검하는 짧은 대화를 만들어줘.
+응답: 하린: 검색 시스템 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+하린: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 하린, 검색 시스템
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000221
+유형: labeled-verification
+라벨: {"difficulty": "hard", "domain": "evaluation", "intent": "compare", "safety": "needs_verification", "task": "labeled-verification", "tone": "friendly", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 검증 손실이 낮으면 모든 질문에 정확하다
+응답: 주장은 그대로 확정하기 어렵다. 모델 평가에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001588
+유형: labeled-comparison
+라벨: {"difficulty": "hard", "format": "contrast", "intent": "classify", "left_domain": "evaluation", "right_domain": "serving", "safety": "safe", "task": "labeled-comparison", "tone": "concise"}
+입력: 모델 평가과 서빙 파이프라인의 차이를 비교해줘.
+응답: 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이고, 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이다. 둘 다 모델 품질을 높이는 데 필요하지만, 모델 평가은 입력을 다루는 관점이 강하고 서빙 파이프라인은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 모델 평가, 서빙 파이프라인
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000480
+유형: labeled-explanation
+라벨: {"difficulty": "hard", "domain": "retrieval", "format": "plain", "intent": "verify", "safety": "needs_verification", "task": "labeled-explanation", "tone": "cautious"}
+입력: 검색 시스템을 실무자에게 설명해줘.
+응답: 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이다. 실무자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 검색 시스템, retrieval
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000940
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "classify", "left_domain": "language_model", "right_domain": "tokenization", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "creative"}
+입력: 언어 모델과 토크나이저의 차이를 비교해줘.
+응답: 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이고, 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 둘 다 모델 품질을 높이는 데 필요하지만, 언어 모델은 입력을 다루는 관점이 강하고 토크나이저은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 언어 모델, 토크나이저
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0002425
+유형: labeled-classification
+라벨: {"difficulty": "hard", "domain": "language_model", "intent": "explain", "safety": "refuse_overclaim", "sentiment": "neutral", "task": "labeled-classification", "tone": "cautious", "urgency": "high"}
+입력: 다음 문장을 라벨링해줘: 언어 모델 점검 결과, 현재 구현은 기본 흐름은 동작하지만 설정 관리를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=neutral, urgency=high이다. 근거는 '언어 모델'의 목적이 문맥을 보고 다음 토큰을 예측하는 확률 모델이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: neutral, high, 언어 모델
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001490
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "checkpointing", "intent": "create", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "concise"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: MetricHub 프로젝트에서 도윤가 체크포인트 관리 항목을 점검했고 latency 값은 379로 기록했다.
+응답: {"project": "MetricHub", "owner": "도윤", "topic": "체크포인트 관리", "metric": "latency", "value": 379}
+검증키워드: MetricHub, 도윤, latency, 379
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001353
+유형: labeled-classification
+라벨: {"difficulty": "hard", "domain": "data_quality", "intent": "classify", "safety": "safe", "sentiment": "risk", "task": "labeled-classification", "tone": "technical", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 데이터 품질 점검 결과, 현재 구현은 기본 흐름은 동작하지만 검증 로그를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=risk, urgency=low이다. 근거는 '데이터 품질'의 목적이 중복, 누락, 오염, 편향을 점검하는 절차이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: risk, low, 데이터 품질
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0000601
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "summarize", "safety": "needs_verification", "sentiment": "positive", "task": "labeled-classification", "tone": "cautious", "urgency": "high"}
+입력: 다음 문장을 라벨링해줘: 검색 시스템 점검 결과, 현재 구현은 기본 흐름은 동작하지만 출력 반복를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=positive, urgency=high이다. 근거는 '검색 시스템'의 목적이 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: positive, high, 검색 시스템
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0000344
+유형: labeled-explanation
+라벨: {"difficulty": "easy", "domain": "tokenization", "format": "plain", "intent": "explain", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "creative"}
+입력: 토크나이저을 비유를 섞어 설명해줘.
+응답: 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 비유를 섞어 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 토크나이저, tokenization
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000979
+유형: labeled-creative
+라벨: {"difficulty": "medium", "domain": "retrieval", "imagery": "작업대", "intent": "create", "safety": "safe", "task": "labeled-creative", "tone": "creative"}
+입력: 검색 시스템을 작업대에 비유해서 창의적으로 설명해줘.
+응답: 검색 시스템은 작업대처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 검색 시스템, 작업대
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002324
+유형: labeled-comparison
+라벨: {"difficulty": "medium", "format": "contrast", "intent": "create", "left_domain": "retrieval", "right_domain": "tokenization", "safety": "safe", "task": "labeled-comparison", "tone": "cautious"}
+입력: 검색 시스템과 토크나이저의 차이를 비교해줘.
+응답: 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이고, 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 둘 다 모델 품질을 높이는 데 필요하지만, 검색 시스템은 입력을 다루는 관점이 강하고 토크나이저은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 검색 시스템, 토크나이저
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001511
+유형: labeled-dialogue
+라벨: {"difficulty": "hard", "domain": "evaluation", "intent": "verify", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "creative"}
+입력: 모델 평가을 점검하는 짧은 대화를 만들어줘.
+응답: 지호: 모델 평가 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+지호: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 지호, 모델 평가
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000790
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "prompting", "format": "steps", "intent": "verify", "safety": "safe", "task": "labeled-plan", "tone": "creative"}
+입력: Irisen에서 프롬프트 설계 개선 계획을 단계별로 작성해줘.
+응답: 1. Irisen의 목표와 입력 자료를 정리한다.
+2. 프롬프트 설계 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 원하는 행동을 끌어내는 입력 형식 설계와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Irisen, 프롬프트 설계
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0002190
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "checkpointing", "format": "steps", "intent": "explain", "safety": "needs_verification", "task": "labeled-plan", "tone": "concise"}
+입력: PromptGarden에서 체크포인트 관리 개선 계획을 단계별로 작성해줘.
+응답: 1. PromptGarden의 목표와 입력 자료를 정리한다.
+2. 체크포인트 관리 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 가중치와 설정을 재현 가능하게 저장하는 작업와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: PromptGarden, 체크포인트 관리
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000829
+유형: labeled-verification
+라벨: {"difficulty": "easy", "domain": "checkpointing", "intent": "verify", "safety": "needs_verification", "task": "labeled-verification", "tone": "creative", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 학습 데이터가 많으면 반복 출력은 절대 생기지 않는다
+응답: 주장은 그대로 확정하기 어렵다. 체크포인트 관리에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001096
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "tokenization", "format": "plain", "intent": "summarize", "safety": "safe", "task": "labeled-explanation", "tone": "creative"}
+입력: 토크나이저을 실무자에게 설명해줘.
+응답: 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 실무자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 토크나이저, tokenization
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001486
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "tokenization", "format": "steps", "intent": "classify", "safety": "refuse_overclaim", "task": "labeled-plan", "tone": "technical"}
+입력: ReaderLab에서 토크나이저 개선 계획을 단계별로 작성해줘.
+응답: 1. ReaderLab의 목표와 입력 자료를 정리한다.
+2. 토크나이저 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: ReaderLab, 토크나이저
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0000428
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "compare", "left_domain": "retrieval", "right_domain": "evaluation", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "cautious"}
+입력: 검색 시스템과 모델 평가의 차이를 비교해줘.
+응답: 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이고, 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이다. 둘 다 모델 품질을 높이는 데 필요하지만, 검색 시스템은 입력을 다루는 관점이 강하고 모델 평가은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 검색 시스템, 모델 평가
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000850
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "prompting", "intent": "create", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "concise"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: ReaderLab 프로젝트에서 유진가 프롬프트 설계 항목을 점검했고 loss 값은 77로 기록했다.
+응답: {"project": "ReaderLab", "owner": "유진", "topic": "프롬프트 설계", "metric": "loss", "value": 77}
+검증키워드: ReaderLab, 유진, loss, 77
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001535
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "verify", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 프롬프트 설계을 점검하는 짧은 대화를 만들어줘.
+응답: 유진: 프롬프트 설계 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+유진: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 유진, 프롬프트 설계
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001317
+유형: labeled-verification
+라벨: {"difficulty": "easy", "domain": "retrieval", "intent": "classify", "safety": "needs_verification", "task": "labeled-verification", "tone": "cautious", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 체크포인트만 있으면 설정 기록은 필요 없다
+응답: 주장은 그대로 확정하기 어렵다. 검색 시스템에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001513
+유형: labeled-classification
+라벨: {"difficulty": "hard", "domain": "evaluation", "intent": "verify", "safety": "safe", "sentiment": "risk", "task": "labeled-classification", "tone": "cautious", "urgency": "high"}
+입력: 다음 문장을 라벨링해줘: 모델 평가 점검 결과, 현재 구현은 기본 흐름은 동작하지만 출력 반복를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=risk, urgency=high이다. 근거는 '모델 평가'의 목적이 출력의 정확도와 안정성을 비교하는 과정이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: risk, high, 모델 평가
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001770
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "explain", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "cautious"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Irisen 프로젝트에서 준서가 프롬프트 설계 항목을 점검했고 ppl 값은 202로 기록했다.
+응답: {"project": "Irisen", "owner": "준서", "topic": "프롬프트 설계", "metric": "ppl", "value": 202}
+검증키워드: Irisen, 준서, ppl, 202
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001344
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "evaluation", "format": "plain", "intent": "summarize", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "creative"}
+입력: 모델 평가을 실무자에게 설명해줘.
+응답: 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이다. 실무자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 모델 평가, evaluation
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000308
+유형: labeled-comparison
+라벨: {"difficulty": "medium", "format": "contrast", "intent": "verify", "left_domain": "prompting", "right_domain": "retrieval", "safety": "safe", "task": "labeled-comparison", "tone": "cautious"}
+입력: 프롬프트 설계과 검색 시스템의 차이를 비교해줘.
+응답: 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이고, 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이다. 둘 다 모델 품질을 높이는 데 필요하지만, 프롬프트 설계은 입력을 다루는 관점이 강하고 검색 시스템은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 프롬프트 설계, 검색 시스템
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000646
+유형: labeled-plan
+라벨: {"difficulty": "easy", "domain": "prompting", "format": "steps", "intent": "verify", "safety": "needs_verification", "task": "labeled-plan", "tone": "concise"}
+입력: PromptGarden에서 프롬프트 설계 개선 계획을 단계별로 작성해줘.
+응답: 1. PromptGarden의 목표와 입력 자료를 정리한다.
+2. 프롬프트 설계 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 원하는 행동을 끌어내는 입력 형식 설계와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: PromptGarden, 프롬프트 설계
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001047
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "checkpointing", "intent": "explain", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "concise"}
+입력: 체크포인트 관리을 점검하는 짧은 대화를 만들어줘.
+응답: 민준: 체크포인트 관리 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+민준: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 민준, 체크포인트 관리
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0002367
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "checkpointing", "intent": "summarize", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "concise"}
+입력: 체크포인트 관리을 점검하는 짧은 대화를 만들어줘.
+응답: 민준: 체크포인트 관리 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+민준: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 민준, 체크포인트 관리
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000962
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "evaluation", "intent": "compare", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "creative"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: PromptGarden 프로젝트에서 도윤가 모델 평가 항목을 점검했고 latency 값은 698로 기록했다.
+응답: {"project": "PromptGarden", "owner": "도윤", "topic": "모델 평가", "metric": "latency", "value": 698}
+검증키워드: PromptGarden, 도윤, latency, 698
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0002015
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "language_model", "intent": "summarize", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 언어 모델을 점검하는 짧은 대화를 만들어줘.
+응답: 민준: 언어 모델 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+민준: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 민준, 언어 모델
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000614
+유형: labeled-plan
+라벨: {"difficulty": "medium", "domain": "data_quality", "format": "steps", "intent": "create", "safety": "safe", "task": "labeled-plan", "tone": "cautious"}
+입력: ReaderLab에서 데이터 품질 개선 계획을 단계별로 작성해줘.
+응답: 1. ReaderLab의 목표와 입력 자료를 정리한다.
+2. 데이터 품질 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 중복, 누락, 오염, 편향을 점검하는 절차와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: ReaderLab, 데이터 품질
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001784
+유형: labeled-explanation
+라벨: {"difficulty": "easy", "domain": "data_quality", "format": "plain", "intent": "explain", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "cautious"}
+입력: 데이터 품질을 비유를 섞어 설명해줘.
+응답: 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이다. 비유를 섞어 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 데이터 품질, data_quality
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000394
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "extract", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 준서가 검색 시스템 항목을 점검했고 ppl 값은 173로 기록했다.
+응답: {"project": "Modelsen", "owner": "준서", "topic": "검색 시스템", "metric": "ppl", "value": 173}
+검증키워드: Modelsen, 준서, ppl, 173
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000761
+유형: labeled-classification
+라벨: {"difficulty": "hard", "domain": "evaluation", "intent": "classify", "safety": "refuse_overclaim", "sentiment": "neutral", "task": "labeled-classification", "tone": "concise", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 모델 평가 점검 결과, 현재 구현은 기본 흐름은 동작하지만 출력 반복를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=neutral, urgency=low이다. 근거는 '모델 평가'의 목적이 출력의 정확도와 안정성을 비교하는 과정이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: neutral, low, 모델 평가
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0000930
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "language_model", "intent": "summarize", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "cautious"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: TokenForge 프로젝트에서 준서가 언어 모델 항목을 점검했고 latency 값은 292로 기록했다.
+응답: {"project": "TokenForge", "owner": "준서", "topic": "언어 모델", "metric": "latency", "value": 292}
+검증키워드: TokenForge, 준서, latency, 292
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000038
+유형: labeled-plan
+라벨: {"difficulty": "medium", "domain": "data_quality", "format": "steps", "intent": "verify", "safety": "refuse_overclaim", "task": "labeled-plan", "tone": "concise"}
+입력: Modelsen에서 데이터 품질 개선 계획을 단계별로 작성해줘.
+응답: 1. Modelsen의 목표와 입력 자료를 정리한다.
+2. 데이터 품질 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 중복, 누락, 오염, 편향을 점검하는 절차와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Modelsen, 데이터 품질
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001173
+유형: labeled-verification
+라벨: {"difficulty": "medium", "domain": "checkpointing", "intent": "extract", "safety": "needs_verification", "task": "labeled-verification", "tone": "technical", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 학습 데이터가 많으면 반복 출력은 절대 생기지 않는다
+응답: 주장은 그대로 확정하기 어렵다. 체크포인트 관리에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0000698
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "evaluation", "intent": "compare", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: ReaderLab 프로젝트에서 도윤가 모델 평가 항목을 점검했고 loss 값은 209로 기록했다.
+응답: {"project": "ReaderLab", "owner": "도윤", "topic": "모델 평가", "metric": "loss", "value": 209}
+검증키워드: ReaderLab, 도윤, loss, 209
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000687
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "tokenization", "intent": "classify", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 토크나이저을 점검하는 짧은 대화를 만들어줘.
+응답: 하린: 토크나이저 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+하린: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 하린, 토크나이저
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001417
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "serving", "intent": "extract", "safety": "safe", "sentiment": "positive", "task": "labeled-classification", "tone": "cautious", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 서빙 파이프라인 점검 결과, 현재 구현은 기본 흐름은 동작하지만 출력 반복를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=positive, urgency=low이다. 근거는 '서빙 파이프라인'의 목적이 학습된 모델을 요청-응답 환경에 연결하는 흐름이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: positive, low, 서빙 파이프라인
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0000508
+유형: labeled-comparison
+라벨: {"difficulty": "hard", "format": "contrast", "intent": "extract", "left_domain": "data_quality", "right_domain": "prompting", "safety": "safe", "task": "labeled-comparison", "tone": "creative"}
+입력: 데이터 품질과 프롬프트 설계의 차이를 비교해줘.
+응답: 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이고, 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이다. 둘 다 모델 품질을 높이는 데 필요하지만, 데이터 품질은 입력을 다루는 관점이 강하고 프롬프트 설계은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 데이터 품질, 프롬프트 설계
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000477
+유형: labeled-verification
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "verify", "safety": "needs_verification", "task": "labeled-verification", "tone": "cautious", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 학습 데이터가 많으면 반복 출력은 절대 생기지 않는다
+응답: 주장은 그대로 확정하기 어렵다. 프롬프트 설계에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0000799
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "tokenization", "intent": "summarize", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "cautious"}
+입력: 토크나이저을 점검하는 짧은 대화를 만들어줘.
+응답: 태오: 토크나이저 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+태오: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 태오, 토크나이저
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001287
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "prompting", "intent": "compare", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 프롬프트 설계을 점검하는 짧은 대화를 만들어줘.
+응답: 태오: 프롬프트 설계 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+태오: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 태오, 프롬프트 설계
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0002268
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "classify", "left_domain": "data_quality", "right_domain": "tokenization", "safety": "needs_verification", "task": "labeled-comparison", "tone": "technical"}
+입력: 데이터 품질과 토크나이저의 차이를 비교해줘.
+응답: 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이고, 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 둘 다 모델 품질을 높이는 데 필요하지만, 데이터 품질은 입력을 다루는 관점이 강하고 토크나이저은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 데이터 품질, 토크나이저
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001161
+유형: labeled-classification
+라벨: {"difficulty": "easy", "domain": "retrieval", "intent": "extract", "safety": "safe", "sentiment": "neutral", "task": "labeled-classification", "tone": "technical", "urgency": "low"}
+입력: 다음 문장을 라벨링해줘: 검색 시스템 점검 결과, 현재 구현은 기본 흐름은 동작하지만 검증 로그를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=neutral, urgency=low이다. 근거는 '검색 시스템'의 목적이 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: neutral, low, 검색 시스템
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001990
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "data_quality", "format": "steps", "intent": "summarize", "safety": "needs_verification", "task": "labeled-plan", "tone": "technical"}
+입력: Modelsen에서 데이터 품질 개선 계획을 단계별로 작성해줘.
+응답: 1. Modelsen의 목표와 입력 자료를 정리한다.
+2. 데이터 품질 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 중복, 누락, 오염, 편향을 점검하는 절차와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: Modelsen, 데이터 품질
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001567
+유형: labeled-dialogue
+라벨: {"difficulty": "hard", "domain": "checkpointing", "intent": "classify", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "cautious"}
+입력: 체크포인트 관리을 점검하는 짧은 대화를 만들어줘.
+응답: 유진: 체크포인트 관리 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+유진: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 유진, 체크포인트 관리
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000884
+유형: labeled-comparison
+라벨: {"difficulty": "hard", "format": "contrast", "intent": "compare", "left_domain": "evaluation", "right_domain": "language_model", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "friendly"}
+입력: 모델 평가과 언어 모델의 차이를 비교해줘.
+응답: 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이고, 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 둘 다 모델 품질을 높이는 데 필요하지만, 모델 평가은 입력을 다루는 관점이 강하고 언어 모델은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 모델 평가, 언어 모델
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001240
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "tokenization", "format": "plain", "intent": "create", "safety": "safe", "task": "labeled-explanation", "tone": "creative"}
+입력: 토크나이저을 간결하게 설명해줘.
+응답: 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 간결하게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 토크나이저, tokenization
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001301
+유형: labeled-verification
+라벨: {"difficulty": "hard", "domain": "retrieval", "intent": "classify", "safety": "needs_verification", "task": "labeled-verification", "tone": "friendly", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 학습 데이터가 많으면 반복 출력은 절대 생기지 않는다
+응답: 주장은 그대로 확정하기 어렵다. 검색 시스템에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0002391
+유형: labeled-dialogue
+라벨: {"difficulty": "hard", "domain": "language_model", "intent": "extract", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 언어 모델을 점검하는 짧은 대화를 만들어줘.
+응답: 아린: 언어 모델 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+아린: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 아린, 언어 모델
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001989
+유형: labeled-verification
+라벨: {"difficulty": "easy", "domain": "checkpointing", "intent": "verify", "safety": "needs_verification", "task": "labeled-verification", "tone": "technical", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 학습 데이터가 많으면 반복 출력은 절대 생기지 않는다
+응답: 주장은 그대로 확정하기 어렵다. 체크포인트 관리에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001207
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "retrieval", "intent": "extract", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "creative"}
+입력: 검색 시스템을 점검하는 짧은 대화를 만들어줘.
+응답: 민준: 검색 시스템 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+민준: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 민준, 검색 시스템
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000956
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "explain", "left_domain": "tokenization", "right_domain": "language_model", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "cautious"}
+입력: 토크나이저과 언어 모델의 차이를 비교해줘.
+응답: 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이고, 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 둘 다 모델 품질을 높이는 데 필요하지만, 토크나이저은 입력을 다루는 관점이 강하고 언어 모델은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 토크나이저, 언어 모델
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000609
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "data_quality", "intent": "extract", "safety": "safe", "sentiment": "positive", "task": "labeled-classification", "tone": "friendly", "urgency": "high"}
+입력: 다음 문장을 라벨링해줘: 데이터 품질 점검 결과, 현재 구현은 기본 흐름은 동작하지만 중복 데이터를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=positive, urgency=high이다. 근거는 '데이터 품질'의 목적이 중복, 누락, 오염, 편향을 점검하는 절차이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: positive, high, 데이터 품질
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001916
+유형: labeled-comparison
+라벨: {"difficulty": "easy", "format": "contrast", "intent": "summarize", "left_domain": "language_model", "right_domain": "retrieval", "safety": "needs_verification", "task": "labeled-comparison", "tone": "technical"}
+입력: 언어 모델과 검색 시스템의 차이를 비교해줘.
+응답: 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이고, 검색 시스템은 질문과 관련된 문서를 찾아 근거를 제공하는 시스템이다. 둘 다 모델 품질을 높이는 데 필요하지만, 언어 모델은 입력을 다루는 관점이 강하고 검색 시스템은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 언어 모델, 검색 시스템
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0000922
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "tokenization", "intent": "compare", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "technical"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: MetricHub 프로젝트에서 나래가 토크나이저 항목을 점검했고 ppl 값은 565로 기록했다.
+응답: {"project": "MetricHub", "owner": "나래", "topic": "토크나이저", "metric": "ppl", "value": 565}
+검증키워드: MetricHub, 나래, ppl, 565
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001335
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "tokenization", "intent": "classify", "safety": "safe", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 토크나이저을 점검하는 짧은 대화를 만들어줘.
+응답: 아린: 토크나이저 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+아린: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 아린, 토크나이저
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000407
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "serving", "intent": "compare", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 서빙 파이프라인을 점검하는 짧은 대화를 만들어줘.
+응답: 나래: 서빙 파이프라인 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+나래: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 나래, 서빙 파이프라인
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000431
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "data_quality", "intent": "compare", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "creative"}
+입력: 데이터 품질을 점검하는 짧은 대화를 만들어줘.
+응답: 유진: 데이터 품질 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+유진: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 유진, 데이터 품질
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0002289
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "prompting", "intent": "create", "safety": "safe", "sentiment": "neutral", "task": "labeled-classification", "tone": "technical", "urgency": "high"}
+입력: 다음 문장을 라벨링해줘: 프롬프트 설계 점검 결과, 현재 구현은 기본 흐름은 동작하지만 검증 로그를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=neutral, urgency=high이다. 근거는 '프롬프트 설계'의 목적이 원하는 행동을 끌어내는 입력 형식 설계이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: neutral, high, 프롬프트 설계
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001112
+유형: labeled-explanation
+라벨: {"difficulty": "easy", "domain": "tokenization", "format": "plain", "intent": "summarize", "safety": "needs_verification", "task": "labeled-explanation", "tone": "friendly"}
+입력: 토크나이저을 간결하게 설명해줘.
+응답: 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이다. 간결하게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 토크나이저, tokenization
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001163
+유형: labeled-creative
+라벨: {"difficulty": "hard", "domain": "data_quality", "imagery": "악보", "intent": "compare", "safety": "needs_verification", "task": "labeled-creative", "tone": "creative"}
+입력: 데이터 품질을 악보에 비유해서 창의적으로 설명해줘.
+응답: 데이터 품질은 악보처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 중복, 누락, 오염, 편향을 점검하는 절차이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 데이터 품질, 악보
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002179
+유형: labeled-creative
+라벨: {"difficulty": "easy", "domain": "data_quality", "imagery": "작업대", "intent": "create", "safety": "safe", "task": "labeled-creative", "tone": "creative"}
+입력: 데이터 품질을 작업대에 비유해서 창의적으로 설명해줘.
+응답: 데이터 품질은 작업대처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 중복, 누락, 오염, 편향을 점검하는 절차이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 데이터 품질, 작업대
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000909
+유형: labeled-verification
+라벨: {"difficulty": "easy", "domain": "retrieval", "intent": "classify", "safety": "needs_verification", "task": "labeled-verification", "tone": "cautious", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 생성 결과 하나만 보고 모델 품질을 확정할 수 있다
+응답: 주장은 그대로 확정하기 어렵다. 검색 시스템에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001013
+유형: labeled-verification
+라벨: {"difficulty": "hard", "domain": "serving", "intent": "extract", "safety": "needs_verification", "task": "labeled-verification", "tone": "cautious", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 학습 데이터가 많으면 반복 출력은 절대 생기지 않는다
+응답: 주장은 그대로 확정하기 어렵다. 서빙 파이프라인에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0000103
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "serving", "intent": "verify", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 서빙 파이프라인을 점검하는 짧은 대화를 만들어줘.
+응답: 하린: 서빙 파이프라인 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 서빙 파이프라인은 학습된 모델을 요청-응답 환경에 연결하는 흐름이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+하린: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 하린, 서빙 파이프라인
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0002470
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "tokenization", "format": "steps", "intent": "verify", "safety": "safe", "task": "labeled-plan", "tone": "creative"}
+입력: PromptGarden에서 토크나이저 개선 계획을 단계별로 작성해줘.
+응답: 1. PromptGarden의 목표와 입력 자료를 정리한다.
+2. 토크나이저 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: PromptGarden, 토크나이저
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001483
+유형: labeled-creative
+라벨: {"difficulty": "easy", "domain": "serving", "imagery": "나침반", "intent": "extract", "safety": "refuse_overclaim", "task": "labeled-creative", "tone": "creative"}
+입력: 서빙 파이프라인을 나침반에 비유해서 창의적으로 설명해줘.
+응답: 서빙 파이프라인은 나침반처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 학습된 모델을 요청-응답 환경에 연결하는 흐름이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 서빙 파이프라인, 나침반
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001356
+유형: labeled-comparison
+라벨: {"difficulty": "medium", "format": "contrast", "intent": "summarize", "left_domain": "language_model", "right_domain": "checkpointing", "safety": "refuse_overclaim", "task": "labeled-comparison", "tone": "creative"}
+입력: 언어 모델과 체크포인트 관리의 차이를 비교해줘.
+응답: 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이고, 체크포인트 관리은 가중치와 설정을 재현 가능하게 저장하는 작업이다. 둘 다 모델 품질을 높이는 데 필요하지만, 언어 모델은 입력을 다루는 관점이 강하고 체크포인트 관리은 결과를 운영 가능한 흐름으로 연결하는 관점이 강하다.
+검증키워드: 언어 모델, 체크포인트 관리
+라벨근거: 두 개념의 공통점과 차이를 모두 설명했다.
+
+<|example|>
+id: label-0001642
+유형: labeled-extraction
+라벨: {"difficulty": "hard", "domain": "serving", "intent": "compare", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "concise"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 서연가 서빙 파이프라인 항목을 점검했고 latency 값은 395로 기록했다.
+응답: {"project": "Modelsen", "owner": "서연", "topic": "서빙 파이프라인", "metric": "latency", "value": 395}
+검증키워드: Modelsen, 서연, latency, 395
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001288
+유형: labeled-explanation
+라벨: {"difficulty": "hard", "domain": "data_quality", "format": "plain", "intent": "extract", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "creative"}
+입력: 데이터 품질을 실무자에게 설명해줘.
+응답: 데이터 품질은 중복, 누락, 오염, 편향을 점검하는 절차이다. 실무자에게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 데이터 품질, data_quality
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000378
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "language_model", "intent": "verify", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Irisen 프로젝트에서 하린가 언어 모델 항목을 점검했고 ppl 값은 839로 기록했다.
+응답: {"project": "Irisen", "owner": "하린", "topic": "언어 모델", "metric": "ppl", "value": 839}
+검증키워드: Irisen, 하린, ppl, 839
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000933
+유형: labeled-verification
+라벨: {"difficulty": "hard", "domain": "prompting", "intent": "summarize", "safety": "needs_verification", "task": "labeled-verification", "tone": "cautious", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 체크포인트만 있으면 설정 기록은 필요 없다
+응답: 주장은 그대로 확정하기 어렵다. 프롬프트 설계에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0000794
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "retrieval", "intent": "extract", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "technical"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: ReaderLab 프로젝트에서 유진가 검색 시스템 항목을 점검했고 accuracy 값은 197로 기록했다.
+응답: {"project": "ReaderLab", "owner": "유진", "topic": "검색 시스템", "metric": "accuracy", "value": 197}
+검증키워드: ReaderLab, 유진, accuracy, 197
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000685
+유형: labeled-verification
+라벨: {"difficulty": "medium", "domain": "data_quality", "intent": "compare", "safety": "needs_verification", "task": "labeled-verification", "tone": "creative", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 체크포인트만 있으면 설정 기록은 필요 없다
+응답: 주장은 그대로 확정하기 어렵다. 데이터 품질에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0000167
+유형: labeled-dialogue
+라벨: {"difficulty": "medium", "domain": "language_model", "intent": "compare", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "cautious"}
+입력: 언어 모델을 점검하는 짧은 대화를 만들어줘.
+응답: 서연: 언어 모델 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+서연: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 서연, 언어 모델
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001818
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "retrieval", "intent": "summarize", "safety": "refuse_overclaim", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 지호가 검색 시스템 항목을 점검했고 ppl 값은 30로 기록했다.
+응답: {"project": "Modelsen", "owner": "지호", "topic": "검색 시스템", "metric": "ppl", "value": 30}
+검증키워드: Modelsen, 지호, ppl, 30
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0001658
+유형: labeled-extraction
+라벨: {"difficulty": "easy", "domain": "tokenization", "intent": "explain", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "concise"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: ReaderLab 프로젝트에서 태오가 토크나이저 항목을 점검했고 loss 값은 202로 기록했다.
+응답: {"project": "ReaderLab", "owner": "태오", "topic": "토크나이저", "metric": "loss", "value": 202}
+검증키워드: ReaderLab, 태오, loss, 202
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000535
+유형: labeled-dialogue
+라벨: {"difficulty": "easy", "domain": "tokenization", "intent": "create", "safety": "refuse_overclaim", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "technical"}
+입력: 토크나이저을 점검하는 짧은 대화를 만들어줘.
+응답: 도윤: 토크나이저 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 토크나이저은 문장을 모델이 처리할 수 있는 토큰으로 바꾸는 구성요소이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+도윤: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 도윤, 토크나이저
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0001142
+유형: labeled-plan
+라벨: {"difficulty": "hard", "domain": "evaluation", "format": "steps", "intent": "create", "safety": "needs_verification", "task": "labeled-plan", "tone": "creative"}
+입력: MetricHub에서 모델 평가 개선 계획을 단계별로 작성해줘.
+응답: 1. MetricHub의 목표와 입력 자료를 정리한다.
+2. 모델 평가 기준으로 현재 상태를 측정한다.
+3. 작은 학습 또는 평가를 실행하고 로그를 남긴다.
+4. 결과가 출력의 정확도와 안정성을 비교하는 과정와 맞는지 검토한다.
+5. 실패 사례를 다음 데이터 라벨에 반영한다.
+검증키워드: MetricHub, 모델 평가
+라벨근거: 단계별 실행 항목과 피드백 루프를 포함했다.
+
+<|example|>
+id: label-0001041
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "serving", "intent": "explain", "safety": "refuse_overclaim", "sentiment": "risk", "task": "labeled-classification", "tone": "friendly", "urgency": "medium"}
+입력: 다음 문장을 라벨링해줘: 서빙 파이프라인 점검 결과, 현재 구현은 기본 흐름은 동작하지만 중복 데이터를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=risk, urgency=medium이다. 근거는 '서빙 파이프라인'의 목적이 학습된 모델을 요청-응답 환경에 연결하는 흐름이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: risk, medium, 서빙 파이프라인
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001323
+유형: labeled-creative
+라벨: {"difficulty": "hard", "domain": "data_quality", "imagery": "실험 노트", "intent": "summarize", "safety": "needs_verification", "task": "labeled-creative", "tone": "creative"}
+입력: 데이터 품질을 실험 노트에 비유해서 창의적으로 설명해줘.
+응답: 데이터 품질은 실험 노트처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 중복, 누락, 오염, 편향을 점검하는 절차이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 데이터 품질, 실험 노트
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+
+<|example|>
+id: label-0002151
+유형: labeled-dialogue
+라벨: {"difficulty": "hard", "domain": "prompting", "intent": "verify", "safety": "needs_verification", "speaker_role": "assistant", "task": "labeled-dialogue", "tone": "friendly"}
+입력: 프롬프트 설계을 점검하는 짧은 대화를 만들어줘.
+응답: 준서: 프롬프트 설계 결과를 바로 믿어도 될까?
+도움말: 바로 확정하지 말고 검증셋과 샘플을 같이 보자. 프롬프트 설계은 원하는 행동을 끌어내는 입력 형식 설계이므로 입력 조건과 실패 사례를 함께 확인해야 해.
+준서: 그럼 로그와 라벨을 남길게.
+도움말: 좋아. 다음 학습에서 그 기록이 개선 근거가 된다.
+검증키워드: 준서, 프롬프트 설계
+라벨근거: 역할이 분명한 대화 형식으로 검증 행동을 안내했다.
+
+<|example|>
+id: label-0000576
+유형: labeled-explanation
+라벨: {"difficulty": "hard", "domain": "language_model", "format": "plain", "intent": "summarize", "safety": "refuse_overclaim", "task": "labeled-explanation", "tone": "friendly"}
+입력: 언어 모델을 간결하게 설명해줘.
+응답: 언어 모델은 문맥을 보고 다음 토큰을 예측하는 확률 모델이다. 간결하게 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 언어 모델, language_model
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0001297
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "data_quality", "intent": "compare", "safety": "refuse_overclaim", "sentiment": "risk", "task": "labeled-classification", "tone": "concise", "urgency": "medium"}
+입력: 다음 문장을 라벨링해줘: 데이터 품질 점검 결과, 현재 구현은 기본 흐름은 동작하지만 중복 데이터를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=risk, urgency=medium이다. 근거는 '데이터 품질'의 목적이 중복, 누락, 오염, 편향을 점검하는 절차이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: risk, medium, 데이터 품질
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001682
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "data_quality", "intent": "create", "safety": "needs_verification", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "friendly"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 민준가 데이터 품질 항목을 점검했고 latency 값은 316로 기록했다.
+응답: {"project": "Modelsen", "owner": "민준", "topic": "데이터 품질", "metric": "latency", "value": 316}
+검증키워드: Modelsen, 민준, latency, 316
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0000826
+유형: labeled-extraction
+라벨: {"difficulty": "medium", "domain": "language_model", "intent": "summarize", "safety": "safe", "schema": "project_owner_metric", "task": "labeled-extraction", "tone": "concise"}
+입력: 다음 문장에서 project, owner, topic, metric, value를 추출해줘. 문장: Modelsen 프로젝트에서 아린가 언어 모델 항목을 점검했고 token_count 값은 311로 기록했다.
+응답: {"project": "Modelsen", "owner": "아린", "topic": "언어 모델", "metric": "token_count", "value": 311}
+검증키워드: Modelsen, 아린, token_count, 311
+라벨근거: 명시된 고유명사와 수치를 구조화했으므로 추출 라벨에 맞다.
+
+<|example|>
+id: label-0002189
+유형: labeled-verification
+라벨: {"difficulty": "medium", "domain": "evaluation", "intent": "explain", "safety": "needs_verification", "task": "labeled-verification", "tone": "cautious", "verdict": "needs_correction"}
+입력: 다음 주장을 검증해줘: 검증 손실이 낮으면 모든 질문에 정확하다
+응답: 주장은 그대로 확정하기 어렵다. 모델 평가에서는 수치 평가, 샘플 출력, 데이터 출처, 설정 기록을 함께 확인해야 한다. 따라서 결론은 needs_correction이며 추가 검증이 필요하다.
+검증키워드: needs_correction, 추가 검증
+라벨근거: 단정적 주장에 반례와 검증 절차가 필요하므로 수정 필요 라벨을 부여했다.
+
+<|example|>
+id: label-0001569
+유형: labeled-classification
+라벨: {"difficulty": "medium", "domain": "prompting", "intent": "verify", "safety": "refuse_overclaim", "sentiment": "positive", "task": "labeled-classification", "tone": "cautious", "urgency": "medium"}
+입력: 다음 문장을 라벨링해줘: 프롬프트 설계 점검 결과, 현재 구현은 기본 흐름은 동작하지만 중복 데이터를 더 확인해야 한다.
+응답: 분류 결과는 sentiment=positive, urgency=medium이다. 근거는 '프롬프트 설계'의 목적이 원하는 행동을 끌어내는 입력 형식 설계이고, 입력 문장이 추가 확인이 필요한 상태를 말하기 때문이다.
+검증키워드: positive, medium, 프롬프트 설계
+라벨근거: 문장에 점검과 추가 확인 신호가 있어 분류 라벨을 부여했다.
+
+<|example|>
+id: label-0001568
+유형: labeled-explanation
+라벨: {"difficulty": "medium", "domain": "evaluation", "format": "plain", "intent": "classify", "safety": "safe", "task": "labeled-explanation", "tone": "concise"}
+입력: 모델 평가을 비유를 섞어 설명해줘.
+응답: 모델 평가은 출력의 정확도와 안정성을 비교하는 과정이다. 비유를 섞어 말하면, 복잡한 흐름을 작은 기준으로 나누어 입력과 출력의 관계를 확인하는 도구다. 좋은 답변은 정의, 목적, 한계를 함께 담는다.
+검증키워드: 모델 평가, evaluation
+라벨근거: 정의와 목적, 한계를 포함하므로 설명 라벨에 맞다.
+
+<|example|>
+id: label-0000963
+유형: labeled-creative
+라벨: {"difficulty": "medium", "domain": "serving", "imagery": "렌즈", "intent": "compare", "safety": "safe", "task": "labeled-creative", "tone": "creative"}
+입력: 서빙 파이프라인을 렌즈에 비유해서 창의적으로 설명해줘.
+응답: 서빙 파이프라인은 렌즈처럼 작동한다. 흩어진 단서를 한곳에 펼쳐 놓고, 어떤 길이 다음 문장으로 이어질지 조심스럽게 고른다. 하지만 학습된 모델을 요청-응답 환경에 연결하는 흐름이라는 한계와 목적을 잊지 않을 때 더 쓸모 있는 도구가 된다.
+검증키워드: 서빙 파이프라인, 렌즈
+라벨근거: 비유 표현과 도메인 설명이 함께 있어 창의적 설명 라벨에 맞다.
+

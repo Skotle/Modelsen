@@ -92,6 +92,34 @@ python scripts/generate.py --checkpoint runs/irisen_tiny.pt --prompt "언어 모
 - `data/build/eval_prompts.jsonl`: generation 평가용 prompt와 기대 키워드
 - `data/build/manifest.json`: 파일 크기, 예제 수, sha256
 
+추가 라벨링 데이터는 `scripts/build_labeled_corpus.py`로 만듭니다.
+
+```bash
+python scripts/build_labeled_corpus.py \
+  --out-dir data/labeled \
+  --target-tokens 1200000 \
+  --validation-fraction 0.08
+```
+
+산출물은 다음과 같습니다.
+
+- `data/labeled/labeled_train.txt`: 학습용 라벨 포함 텍스트
+- `data/labeled/labeled_val.txt`: 검증용 라벨 포함 텍스트
+- `data/labeled/labeled_train.jsonl`: 구조화된 라벨링 원본
+- `data/labeled/labeled_val.jsonl`: 구조화된 검증 원본
+- `data/labeled/manifest.json`: 토큰 수, 파일 크기, sha256
+
+char tokenizer로 라벨링 데이터를 학습하려면:
+
+```bash
+python -m irisen_model.train \
+  --config configs/irisen-char-labeled.json \
+  --data data/labeled/labeled_train.txt \
+  --val-data data/labeled/labeled_val.txt \
+  --out runs/irisen_char_labeled.pt \
+  --tokenizer char
+```
+
 ## 소스 구조
 
 ```text
