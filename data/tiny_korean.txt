@@ -1,0 +1,16 @@
+나는 작은 언어 모델이다.
+나는 글자를 바이트로 읽고, 다음 바이트를 예측한다.
+문장은 앞의 문맥을 보고 다음 말을 고른다.
+학습은 실수를 줄이는 방향으로 천천히 움직인다.
+깡통처럼 보이는 프로그램도 숫자와 패턴 안에서 문장을 배운다.
+
+언어 모델은 생각을 가진 사람은 아니지만, 단어 사이의 관계를 압축해서 흉내 낸다.
+좋은 데이터와 충분한 반복이 있으면 더 자연스러운 문장을 만든다.
+작은 모델은 작게 배우고, 큰 모델은 더 넓은 문맥을 오래 본다.
+이 예제는 구조를 이해하기 위한 작은 말뭉치다.
+
+The tiny model reads UTF-8 bytes.
+It learns by predicting the next byte from context.
+A transformer uses attention to mix useful clues from previous positions.
+Small training runs are not magic, but they make the machinery visible.
+

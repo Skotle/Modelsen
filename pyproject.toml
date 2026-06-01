@@ -1,0 +1,14 @@
+[project]
+name = "irisen-model"
+version = "0.1.0"
+description = "A tiny byte-level Transformer language model implemented from scratch with PyTorch."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+    "numpy",
+]
+
+[tool.setuptools.packages.find]
+include = ["irisen_model*"]
+

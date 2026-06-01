@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - python -m pip install --upgrade pip
+      - python -m pip install -r requirements.txt
+  pre_build:
+    commands:
+      - python -m unittest
+  build:
+    commands:
+      - python scripts/build_corpus.py --out-dir data/build --train-examples 512 --val-examples 128 --eval-examples 16
+      - python -m irisen_model.train --config configs/irisen-local-build.json --data data/build/irisen_train.txt --val-data data/build/irisen_val.txt --out runs/cloud_smoke.pt --steps 8 --eval-interval 4 --eval-batches 2 --batch-size 4 --context-size 64 --d-model 48 --layers 2 --heads 4
+      - python scripts/evaluate.py --checkpoint runs/cloud_smoke.pt --data data/build/irisen_val.txt --batches 4 --batch-size 4
+
+artifacts:
+  files:
+    - runs/cloud_smoke.pt
+    - data/build/manifest.json
+

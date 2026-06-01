@@ -1,0 +1,27 @@
+steps:
+  - name: "python:3.12-slim"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        set -euo pipefail
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
+        python -m unittest
+        python scripts/build_corpus.py --out-dir data/build --train-examples 512 --val-examples 128 --eval-examples 16
+        python -m irisen_model.train --config configs/irisen-local-build.json --data data/build/irisen_train.txt --val-data data/build/irisen_val.txt --out runs/cloud_smoke.pt --steps 8 --eval-interval 4 --eval-batches 2 --batch-size 4 --context-size 64 --d-model 48 --layers 2 --heads 4
+        python scripts/evaluate.py --checkpoint runs/cloud_smoke.pt --data data/build/irisen_val.txt --batches 4 --batch-size 4
+
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "irisen-model:cloudbuild", "."]
+
+artifacts:
+  objects:
+    location: "gs://$PROJECT_ID-irisen-artifacts/$BUILD_ID"
+    paths:
+      - "runs/cloud_smoke.pt"
+      - "data/build/manifest.json"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: "E2_HIGHCPU_8"

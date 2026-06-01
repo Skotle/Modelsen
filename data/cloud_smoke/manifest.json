@@ -1,0 +1,29 @@
+{
+  "config": {
+    "output_dir": "data\\cloud_smoke",
+    "train_examples": 512,
+    "val_examples": 128,
+    "eval_examples": 16,
+    "seed": 20260530
+  },
+  "artifacts": {
+    "train": {
+      "path": "data\\cloud_smoke\\irisen_train.txt",
+      "examples": 512,
+      "bytes": 174191,
+      "sha256": "ef1de3cf1964406b5bbad9a78e69b5d48e471e917bd80720f12717fd868a3c17"
+    },
+    "validation": {
+      "path": "data\\cloud_smoke\\irisen_val.txt",
+      "examples": 128,
+      "bytes": 44135,
+      "sha256": "d8efab03c64d74ed3fee5824d530d53920b4419b2a2bfa5080d0455062edf08e"
+    },
+    "eval_prompts": {
+      "path": "data\\cloud_smoke\\eval_prompts.jsonl",
+      "examples": 16,
+      "bytes": 2255,
+      "sha256": "d0ade2a327095fc0278e900b1ba2f7a0b5055b4d8f78ee8c707e012bcfa30db2"
+    }
+  }
+}

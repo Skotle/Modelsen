@@ -1,0 +1,80 @@
+{"id": "math-0000", "type": "arithmetic", "prompt": "52 + 41 값을 계산해.", "expected_terms": ["93"]}
+{"id": "define-0001", "type": "definition", "prompt": "체크포인트을 한 문단으로 설명해.", "expected_terms": ["체크포인트", "checkpoint"]}
+{"id": "json-0002", "type": "structured-output", "prompt": "과적합 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "훈련"]}
+{"id": "math-0003", "type": "arithmetic", "prompt": "36 + 98 값을 계산해.", "expected_terms": ["134"]}
+{"id": "define-0004", "type": "definition", "prompt": "데이터 검증을 한 문단으로 설명해.", "expected_terms": ["데이터 검증", "validation"]}
+{"id": "json-0005", "type": "structured-output", "prompt": "배치 샘플링 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "여러"]}
+{"id": "math-0006", "type": "arithmetic", "prompt": "43 + 78 값을 계산해.", "expected_terms": ["121"]}
+{"id": "define-0007", "type": "definition", "prompt": "데이터 검증을 한 문단으로 설명해.", "expected_terms": ["데이터 검증", "validation"]}
+{"id": "json-0008", "type": "structured-output", "prompt": "토크나이저 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "문장을"]}
+{"id": "math-0009", "type": "arithmetic", "prompt": "71 + 44 값을 계산해.", "expected_terms": ["115"]}
+{"id": "define-0010", "type": "definition", "prompt": "언어 모델을 한 문단으로 설명해.", "expected_terms": ["언어 모델", "context"]}
+{"id": "json-0011", "type": "structured-output", "prompt": "데이터 검증 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "학습에"]}
+{"id": "math-0012", "type": "arithmetic", "prompt": "51 + 41 값을 계산해.", "expected_terms": ["92"]}
+{"id": "define-0013", "type": "definition", "prompt": "주의 메커니즘을 한 문단으로 설명해.", "expected_terms": ["주의 메커니즘", "attention"]}
+{"id": "json-0014", "type": "structured-output", "prompt": "토크나이저 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "문장을"]}
+{"id": "math-0015", "type": "arithmetic", "prompt": "30 + 10 값을 계산해.", "expected_terms": ["40"]}
+{"id": "define-0016", "type": "definition", "prompt": "최적화을 한 문단으로 설명해.", "expected_terms": ["최적화", "optimization"]}
+{"id": "json-0017", "type": "structured-output", "prompt": "배치 샘플링 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "여러"]}
+{"id": "math-0018", "type": "arithmetic", "prompt": "31 + 54 값을 계산해.", "expected_terms": ["85"]}
+{"id": "define-0019", "type": "definition", "prompt": "토크나이저을 한 문단으로 설명해.", "expected_terms": ["토크나이저", "tokenizer"]}
+{"id": "json-0020", "type": "structured-output", "prompt": "서빙 엔진 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "체크포인트를"]}
+{"id": "math-0021", "type": "arithmetic", "prompt": "12 + 33 값을 계산해.", "expected_terms": ["45"]}
+{"id": "define-0022", "type": "definition", "prompt": "배치 샘플링을 한 문단으로 설명해.", "expected_terms": ["배치 샘플링", "batch sampling"]}
+{"id": "json-0023", "type": "structured-output", "prompt": "주의 메커니즘 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "이전"]}
+{"id": "math-0024", "type": "arithmetic", "prompt": "33 + 14 값을 계산해.", "expected_terms": ["47"]}
+{"id": "define-0025", "type": "definition", "prompt": "최적화을 한 문단으로 설명해.", "expected_terms": ["최적화", "optimization"]}
+{"id": "json-0026", "type": "structured-output", "prompt": "체크포인트 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "모델"]}
+{"id": "math-0027", "type": "arithmetic", "prompt": "59 + 56 값을 계산해.", "expected_terms": ["115"]}
+{"id": "define-0028", "type": "definition", "prompt": "언어 모델을 한 문단으로 설명해.", "expected_terms": ["언어 모델", "context"]}
+{"id": "json-0029", "type": "structured-output", "prompt": "체크포인트 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "모델"]}
+{"id": "math-0030", "type": "arithmetic", "prompt": "74 + 84 값을 계산해.", "expected_terms": ["158"]}
+{"id": "define-0031", "type": "definition", "prompt": "최적화을 한 문단으로 설명해.", "expected_terms": ["최적화", "optimization"]}
+{"id": "json-0032", "type": "structured-output", "prompt": "서빙 엔진 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "체크포인트를"]}
+{"id": "math-0033", "type": "arithmetic", "prompt": "97 + 55 값을 계산해.", "expected_terms": ["152"]}
+{"id": "define-0034", "type": "definition", "prompt": "과적합을 한 문단으로 설명해.", "expected_terms": ["과적합", "overfitting"]}
+{"id": "json-0035", "type": "structured-output", "prompt": "배치 샘플링 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "여러"]}
+{"id": "math-0036", "type": "arithmetic", "prompt": "71 + 64 값을 계산해.", "expected_terms": ["135"]}
+{"id": "define-0037", "type": "definition", "prompt": "토크나이저을 한 문단으로 설명해.", "expected_terms": ["토크나이저", "tokenizer"]}
+{"id": "json-0038", "type": "structured-output", "prompt": "언어 모델 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "다음"]}
+{"id": "math-0039", "type": "arithmetic", "prompt": "29 + 45 값을 계산해.", "expected_terms": ["74"]}
+{"id": "define-0040", "type": "definition", "prompt": "언어 모델을 한 문단으로 설명해.", "expected_terms": ["언어 모델", "context"]}
+{"id": "json-0041", "type": "structured-output", "prompt": "주의 메커니즘 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "이전"]}
+{"id": "math-0042", "type": "arithmetic", "prompt": "27 + 71 값을 계산해.", "expected_terms": ["98"]}
+{"id": "define-0043", "type": "definition", "prompt": "평가 지표을 한 문단으로 설명해.", "expected_terms": ["평가 지표", "metric"]}
+{"id": "json-0044", "type": "structured-output", "prompt": "과적합 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "훈련"]}
+{"id": "math-0045", "type": "arithmetic", "prompt": "74 + 22 값을 계산해.", "expected_terms": ["96"]}
+{"id": "define-0046", "type": "definition", "prompt": "체크포인트을 한 문단으로 설명해.", "expected_terms": ["체크포인트", "checkpoint"]}
+{"id": "json-0047", "type": "structured-output", "prompt": "배치 샘플링 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "여러"]}
+{"id": "math-0048", "type": "arithmetic", "prompt": "69 + 36 값을 계산해.", "expected_terms": ["105"]}
+{"id": "define-0049", "type": "definition", "prompt": "주의 메커니즘을 한 문단으로 설명해.", "expected_terms": ["주의 메커니즘", "attention"]}
+{"id": "json-0050", "type": "structured-output", "prompt": "체크포인트 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "모델"]}
+{"id": "math-0051", "type": "arithmetic", "prompt": "65 + 56 값을 계산해.", "expected_terms": ["121"]}
+{"id": "define-0052", "type": "definition", "prompt": "평가 지표을 한 문단으로 설명해.", "expected_terms": ["평가 지표", "metric"]}
+{"id": "json-0053", "type": "structured-output", "prompt": "데이터 검증 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "학습에"]}
+{"id": "math-0054", "type": "arithmetic", "prompt": "68 + 84 값을 계산해.", "expected_terms": ["152"]}
+{"id": "define-0055", "type": "definition", "prompt": "언어 모델을 한 문단으로 설명해.", "expected_terms": ["언어 모델", "context"]}
+{"id": "json-0056", "type": "structured-output", "prompt": "데이터 검증 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "학습에"]}
+{"id": "math-0057", "type": "arithmetic", "prompt": "54 + 32 값을 계산해.", "expected_terms": ["86"]}
+{"id": "define-0058", "type": "definition", "prompt": "주의 메커니즘을 한 문단으로 설명해.", "expected_terms": ["주의 메커니즘", "attention"]}
+{"id": "json-0059", "type": "structured-output", "prompt": "평가 지표 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "품질을"]}
+{"id": "math-0060", "type": "arithmetic", "prompt": "52 + 69 값을 계산해.", "expected_terms": ["121"]}
+{"id": "define-0061", "type": "definition", "prompt": "주의 메커니즘을 한 문단으로 설명해.", "expected_terms": ["주의 메커니즘", "attention"]}
+{"id": "json-0062", "type": "structured-output", "prompt": "서빙 엔진 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "체크포인트를"]}
+{"id": "math-0063", "type": "arithmetic", "prompt": "37 + 70 값을 계산해.", "expected_terms": ["107"]}
+{"id": "define-0064", "type": "definition", "prompt": "평가 지표을 한 문단으로 설명해.", "expected_terms": ["평가 지표", "metric"]}
+{"id": "json-0065", "type": "structured-output", "prompt": "최적화 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "손실을"]}
+{"id": "math-0066", "type": "arithmetic", "prompt": "97 + 49 값을 계산해.", "expected_terms": ["146"]}
+{"id": "define-0067", "type": "definition", "prompt": "체크포인트을 한 문단으로 설명해.", "expected_terms": ["체크포인트", "checkpoint"]}
+{"id": "json-0068", "type": "structured-output", "prompt": "최적화 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "손실을"]}
+{"id": "math-0069", "type": "arithmetic", "prompt": "27 + 39 값을 계산해.", "expected_terms": ["66"]}
+{"id": "define-0070", "type": "definition", "prompt": "토크나이저을 한 문단으로 설명해.", "expected_terms": ["토크나이저", "tokenizer"]}
+{"id": "json-0071", "type": "structured-output", "prompt": "데이터 검증 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "학습에"]}
+{"id": "math-0072", "type": "arithmetic", "prompt": "69 + 41 값을 계산해.", "expected_terms": ["110"]}
+{"id": "define-0073", "type": "definition", "prompt": "배치 샘플링을 한 문단으로 설명해.", "expected_terms": ["배치 샘플링", "batch sampling"]}
+{"id": "json-0074", "type": "structured-output", "prompt": "서빙 엔진 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "체크포인트를"]}
+{"id": "math-0075", "type": "arithmetic", "prompt": "39 + 56 값을 계산해.", "expected_terms": ["95"]}
+{"id": "define-0076", "type": "definition", "prompt": "최적화을 한 문단으로 설명해.", "expected_terms": ["최적화", "optimization"]}
+{"id": "json-0077", "type": "structured-output", "prompt": "평가 지표 정보를 JSON으로 정리해.", "expected_terms": ["topic", "english", "품질을"]}
+{"id": "math-0078", "type": "arithmetic", "prompt": "43 + 52 값을 계산해.", "expected_terms": ["95"]}
+{"id": "define-0079", "type": "definition", "prompt": "배치 샘플링을 한 문단으로 설명해.", "expected_terms": ["배치 샘플링", "batch sampling"]}

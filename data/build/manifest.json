@@ -1,0 +1,29 @@
+{
+  "config": {
+    "output_dir": "data\\build",
+    "train_examples": 12000,
+    "val_examples": 1500,
+    "eval_examples": 80,
+    "seed": 20260530
+  },
+  "artifacts": {
+    "train": {
+      "path": "data\\build\\irisen_train.txt",
+      "examples": 12000,
+      "bytes": 4098455,
+      "sha256": "b33feec512794d295785194c12bdf9bdecadaae4defeff02b5620b9315204cfe"
+    },
+    "validation": {
+      "path": "data\\build\\irisen_val.txt",
+      "examples": 1500,
+      "bytes": 516799,
+      "sha256": "3cce4dc0476f193777c87a8f18b94c923e2acd48ef196e7b2b3d5d1d939a597a"
+    },
+    "eval_prompts": {
+      "path": "data\\build\\eval_prompts.jsonl",
+      "examples": 80,
+      "bytes": 11382,
+      "sha256": "ef25a03c8a4c98ad82edbacd59e0d66eda35e2996afd1849f4a8ac4510baf243"
+    }
+  }
+}

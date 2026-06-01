@@ -1,0 +1,65 @@
+name: Cloud Build Smoke
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-test-train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Run tests
+        run: python -m unittest
+
+      - name: Build synthetic corpus
+        run: |
+          python scripts/build_corpus.py --out-dir data/build --train-examples 512 --val-examples 128 --eval-examples 16
+
+      - name: Train smoke checkpoint
+        run: |
+          python -m irisen_model.train --config configs/irisen-local-build.json --data data/build/irisen_train.txt --val-data data/build/irisen_val.txt --out runs/cloud_smoke.pt --steps 8 --eval-interval 4 --eval-batches 2 --batch-size 4 --context-size 64 --d-model 48 --layers 2 --heads 4
+
+      - name: Evaluate smoke checkpoint
+        run: |
+          python scripts/evaluate.py --checkpoint runs/cloud_smoke.pt --data data/build/irisen_val.txt --batches 4 --batch-size 4
+
+      - name: Upload checkpoint artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: irisen-cloud-smoke
+          path: |
+            runs/cloud_smoke.pt
+            data/build/manifest.json
+
+  docker-image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t irisen-model:ci .
+
+      - name: Run image command
+        run: docker run --rm irisen-model:ci
+
