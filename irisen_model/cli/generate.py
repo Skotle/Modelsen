@@ -8,6 +8,7 @@ from irisen_model.generation import GENERATION_PRESETS
 from irisen_model.serving import TextGenerationEngine
 
 STOP_PRESETS = {
+    "none": [],
     "answer": [
         "\n후속 질문:",
         "\n검토:",
@@ -15,6 +16,8 @@ STOP_PRESETS = {
         "\n규칙:",
         "\n검증키워드:",
         "\n라벨근거:",
+        "\n검산:",
+        "\n원칙:",
         "\nid=",
         "\n<|example|>",
         "<|example|>",
@@ -35,7 +38,12 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--top-p", type=float)
     parser.add_argument("--repetition-penalty", type=float)
     parser.add_argument("--no-repeat-ngram-size", type=int)
-    parser.add_argument("--stop-preset", choices=sorted(STOP_PRESETS), help="Use a built-in stop list.")
+    parser.add_argument(
+        "--stop-preset",
+        choices=sorted(STOP_PRESETS),
+        default="answer",
+        help="Use a built-in stop list. Use 'none' to print raw continuation.",
+    )
     parser.add_argument("--stop", action="append", help="Stop printing at this text. Can be passed multiple times.")
     parser.add_argument("--completion-only", action="store_true", help="Print only newly generated text.")
     parser.add_argument("--num-samples", type=int, default=1, help="Number of different samples to generate.")

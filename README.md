@@ -25,6 +25,10 @@ python -m irisen_model.train \
   --steps 1000 \
   --eval-interval 100
 
+#powershell
+python -m irisen_model.train --config configs/irisen-local-build.json --data data/build/irisen_train.txt --val-data data/build/irisen_val.txt --out runs/irisen_char.pt --tokenizer char --char-vocab korean --steps 1000 --eval-interval 100
+
+
 python scripts/generate.py \
   --checkpoint runs/irisen_char.pt \
   --prompt "유형: instruction
@@ -179,6 +183,18 @@ python -m irisen_model.train \
   --out runs/irisen_char_response_10m.pt \
   --tokenizer char \
   --char-vocab korean
+```
+
+`configs/irisen-char-labeled-10m.json`는 1,000만 파라미터 이상 실험용입니다. 현재 char vocab이 약 297자인 데이터 기준으로 약 10.86M parameters이며, CPU 학습을 고려해 batch size는 4로 낮춰 두었습니다. 이전 85만급 설정은 `configs/irisen-char-labeled-10m-small.json`에 보존했습니다.
+
+```bash
+python -m irisen_model.train \
+  --config configs/irisen-char-labeled-10m.json \
+  --data data/labeled_response_10m/labeled_train.txt \
+  --val-data data/labeled_response_10m/labeled_val.txt \
+  --out runs/irisen_char_response_10m.pt \
+  --tokenizer char \
+  --char-vocab data
 ```
 
 생성할 때는 답변만 출력하고 다음 예제로 넘어가지 않게 자르는 편이 좋습니다.

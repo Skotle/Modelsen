@@ -1,0 +1,42 @@
+{
+  "config": {
+    "output_dir": "data\\labeled_response_10m",
+    "target_tokens": 12000000,
+    "validation_fraction": 0.08,
+    "seed": 20260603,
+    "format": "response"
+  },
+  "totals": {
+    "examples": 49563,
+    "train_examples": 45597,
+    "validation_examples": 3966,
+    "char_tokens": 12049615,
+    "byte_tokens": 23095711
+  },
+  "artifacts": {
+    "train_text": {
+      "path": "data\\labeled_response_10m\\labeled_train.txt",
+      "char_tokens": 11084749,
+      "byte_tokens": 21245591,
+      "bytes": 21604587,
+      "sha256": "79cd7e607d60d4d1c75af09c37994095c81ffdebddfef931519c94beaae5f4f0"
+    },
+    "validation_text": {
+      "path": "data\\labeled_response_10m\\labeled_val.txt",
+      "char_tokens": 964866,
+      "byte_tokens": 1850120,
+      "bytes": 1881430,
+      "sha256": "4e13280dceb97ea3fa5394aa3da2bf27920812d522f5a90dfe405a1b32e8ee06"
+    },
+    "train_jsonl": {
+      "path": "data\\labeled_response_10m\\labeled_train.jsonl",
+      "bytes": 37503530,
+      "sha256": "53fa171de300a66235e1bfb02cc8c95401e521df46fe85e54ecf2fb20e7c049b"
+    },
+    "validation_jsonl": {
+      "path": "data\\labeled_response_10m\\labeled_val.jsonl",
+      "bytes": 3264914,
+      "sha256": "4c86ae13b5e6c6b5fbd6864a977b08785d48ec4c32e52d035f71ca7a3538310c"
+    }
+  }
+}

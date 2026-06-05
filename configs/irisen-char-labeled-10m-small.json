@@ -1,0 +1,26 @@
+{
+  "model": {
+    "model_type": "irisen",
+    "vocab_size": 256,
+    "context_size": 160,
+    "d_model": 128,
+    "n_layers": 4,
+    "n_heads": 4,
+    "d_ff": null,
+    "dropout": 0.1,
+    "bias": true,
+    "tie_word_embeddings": true
+  },
+  "training": {
+    "batch_size": 16,
+    "steps": 8000,
+    "learning_rate": 0.0004,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eval_interval": 500,
+    "eval_batches": 16,
+    "train_fraction": 0.9,
+    "seed": 20260602,
+    "device": "auto"
+  }
+}

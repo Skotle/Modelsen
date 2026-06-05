@@ -2,25 +2,25 @@
   "model": {
     "model_type": "irisen",
     "vocab_size": 256,
-    "context_size": 160,
-    "d_model": 128,
-    "n_layers": 4,
-    "n_heads": 4,
+    "context_size": 256,
+    "d_model": 384,
+    "n_layers": 6,
+    "n_heads": 6,
     "d_ff": null,
     "dropout": 0.1,
     "bias": true,
     "tie_word_embeddings": true
   },
   "training": {
-    "batch_size": 16,
-    "steps": 8000,
-    "learning_rate": 0.0004,
+    "batch_size": 4,
+    "steps": 10000,
+    "learning_rate": 0.0002,
     "weight_decay": 0.1,
     "grad_clip": 1.0,
     "eval_interval": 500,
-    "eval_batches": 16,
+    "eval_batches": 8,
     "train_fraction": 0.9,
-    "seed": 20260602,
+    "seed": 20260604,
     "device": "auto"
   }
 }
